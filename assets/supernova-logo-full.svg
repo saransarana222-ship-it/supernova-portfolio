@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%" height="100%">
+  <defs>
+    <!-- SuperNova Cosmic Gradient -->
+    <linearGradient id="fullNovaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="40%" stop-color="#06b6d4"/>
+      <stop offset="75%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <!-- Electric Neon Glow -->
+    <filter id="fullNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Left Side: Icon Emblem (Scaled & Positioned at x=20, y=20) -->
+  <g transform="translate(20, 20)">
+    <!-- Base Icon Container -->
+    <rect x="0" y="0" width="160" height="160" rx="38" fill="#030712" stroke="#1e293b" stroke-width="2"/>
+    <rect x="0" y="0" width="160" height="160" rx="38" fill="none" stroke="url(#fullNovaGrad)" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- 4-Point Radiant SuperNova Starburst -->
+    <g filter="url(#fullNeonGlow)">
+      <path d="M 80 18 Q 80 65 65 80 Q 80 65 80 18 Z" fill="url(#fullNovaGrad)" opacity="0.75"/>
+      <path d="M 80 142 Q 80 95 95 80 Q 80 95 80 142 Z" fill="url(#fullNovaGrad)" opacity="0.75"/>
+      <path d="M 18 80 Q 65 80 80 95 Q 65 80 18 80 Z" fill="url(#fullNovaGrad)" opacity="0.75"/>
+      <path d="M 142 80 Q 95 80 80 65 Q 95 80 142 80 Z" fill="url(#fullNovaGrad)" opacity="0.75"/>
+    </g>
+
+    <!-- Celestial Gyro Rings -->
+    <ellipse cx="80" cy="80" rx="60" ry="22" fill="none" stroke="url(#fullNovaGrad)" stroke-width="1.2" opacity="0.4" transform="rotate(-30 80 80)"/>
+    <ellipse cx="80" cy="80" rx="60" ry="22" fill="none" stroke="url(#fullNovaGrad)" stroke-width="1.2" opacity="0.4" transform="rotate(30 80 80)"/>
+
+    <!-- Central S Monogram Blades -->
+    <g filter="url(#fullNeonGlow)">
+      <path d="M 102 58 C 102 44, 90 39, 80 39 C 62 39, 52 49, 52 63 C 52 79, 72 82, 80 85 C 91 89, 96 92, 96 96 L 107 92 C 107 79, 90 74, 81 71 C 69 67, 64 63, 64 58 C 64 51, 70 48, 80 48 C 89 48, 95 52, 98 58 Z" fill="url(#fullNovaGrad)"/>
+      <path d="M 58 102 C 58 116, 70 121, 80 121 C 98 121, 108 111, 108 97 C 108 81, 88 78, 80 75 C 69 71, 64 68, 64 64 L 53 68 C 53 81, 70 86, 79 89 C 91 93, 96 97, 96 102 C 96 109, 90 112, 80 112 C 71 112, 65 108, 62 102 Z" fill="url(#fullNovaGrad)"/>
+      <polygon points="80,72 88,80 80,88 72,80" fill="#ffffff"/>
+      <circle cx="80" cy="80" r="1.8" fill="#38bdf8"/>
+    </g>
+  </g>
+
+  <!-- Right Side: Brand Wordmark -->
+  <!-- Main Title: SUPERNOVA -->
+  <text x="210" y="105" 
+        font-family="'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" 
+        font-size="64" 
+        font-weight="900" 
+        letter-spacing="-0.03em" 
+        fill="url(#textGrad)">
+    SUPERNOVA
+  </text>
+
+  <!-- STUDIO Badge & Secondary Tagline -->
+  <g transform="translate(620, 58)">
+    <rect x="0" y="0" width="120" height="42" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.2"/>
+    <rect x="0" y="0" width="120" height="42" rx="10" fill="none" stroke="url(#fullNovaGrad)" stroke-width="1" opacity="0.7"/>
+    <text x="60" y="27" 
+          font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" 
+          font-size="18" 
+          font-weight="800" 
+          letter-spacing="0.18em" 
+          fill="#38bdf8" 
+          text-anchor="middle">
+      STUDIO
+    </text>
+  </g>
+
+  <!-- Subtitle Tagline below wordmark -->
+  <text x="212" y="145" 
+        font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" 
+        font-size="14" 
+        font-weight="700" 
+        letter-spacing="0.12em" 
+        fill="#94a3b8">
+    <tspan fill="#06b6d4">✦</tspan> 3D WEB ARCHITECTURE <tspan fill="#64748b">•</tspan> AUTONOMOUS AI SYSTEMS
+  </text>
+</svg>
