@@ -1,0 +1,80 @@
+[
+  {
+    "id": "dxb-01",
+    "name": "Hamptons International Dubai",
+    "contactPerson": "Tariq Mansoor",
+    "niche": "Dubai Luxury Real Estate",
+    "location": "Downtown Dubai, UAE",
+    "phone": "+971501234567",
+    "email": "tariq@hamptonsdubai.ae",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Hamptons%20International%20Dubai%20Broker",
+    "dealValue": "$3,500 (AED 12,800)",
+    "demoUrl": "https://supernova-saran.web.app/clients/malibu-luxury",
+    "status": "Ready to Pitch"
+  },
+  {
+    "id": "dxb-02",
+    "name": "Espace Real Estate",
+    "contactPerson": "Sarah Jenkins",
+    "niche": "Dubai Luxury Real Estate",
+    "location": "Dubai Marina & Palm Jumeirah, UAE",
+    "phone": "+971529876543",
+    "email": "info@espace.ae",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Espace%20Real%20Estate%20Broker",
+    "dealValue": "$3,000 (AED 11,000)",
+    "demoUrl": "https://supernova-saran.web.app/clients/malibu-luxury",
+    "status": "Ready to Pitch"
+  },
+  {
+    "id": "dxb-03",
+    "name": "Luxury Explorers Collection",
+    "contactPerson": "Mohammed Al-Otaiba",
+    "niche": "Dubai Luxury Real Estate",
+    "location": "DIFC, Dubai, UAE",
+    "phone": "+971556781234",
+    "email": "concierge@luxuryexplorers.ae",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Luxury%20Explorers%20Collection%20Dubai",
+    "dealValue": "$4,500 (AED 16,500)",
+    "demoUrl": "https://supernova-saran.web.app/clients/malibu-luxury",
+    "status": "Ready to Pitch"
+  },
+  {
+    "id": "usa-01",
+    "name": "Biscayne Dental & Facial Aesthetics",
+    "contactPerson": "Dr. Carlos Alvarez DDS",
+    "niche": "USA Aesthetic & Dental Clinics",
+    "location": "Miami, Florida, USA",
+    "phone": "+13055550192",
+    "email": "contact@biscaynedental.com",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Biscayne%20Dental%20Miami",
+    "dealValue": "$2,200",
+    "demoUrl": "https://supernova-saran.web.app/clients/mathan-dental",
+    "status": "Ready to Pitch"
+  },
+  {
+    "id": "usa-02",
+    "name": "Manhattan Aesthetic Smile Studio",
+    "contactPerson": "Dr. Eleanor Vance",
+    "niche": "USA Aesthetic & Dental Clinics",
+    "location": "New York, NY, USA",
+    "phone": "+12125550148",
+    "email": "office@manhattansmiles.nyc",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Manhattan%20Aesthetic%20Dentist",
+    "dealValue": "$2,800",
+    "demoUrl": "https://supernova-saran.web.app/clients/mathan-dental",
+    "status": "Ready to Pitch"
+  },
+  {
+    "id": "ind-01",
+    "name": "Velankanni Grand Bay Resort",
+    "contactPerson": "General Manager",
+    "niche": "Luxury Hospitality",
+    "location": "Velankanni, Tamil Nadu",
+    "phone": "+919443152643",
+    "email": "reservations@grandbay.in",
+    "linkedin": "https://www.linkedin.com/search/results/people/?keywords=Velankanni%20Resort",
+    "dealValue": "₹65,000",
+    "demoUrl": "https://supernova-saran.web.app",
+    "status": "Ready to Pitch"
+  }
+]

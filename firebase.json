@@ -14,6 +14,14 @@
     "cleanUrls": true,
     "rewrites": [
       {
+        "source": "/outreach",
+        "destination": "/outreach/index.html"
+      },
+      {
+        "source": "/outreach/**",
+        "destination": "/outreach/index.html"
+      },
+      {
         "source": "/certificate",
         "destination": "/certificate.html"
       },
