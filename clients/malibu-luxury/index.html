@@ -3,193 +3,313 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malibu Luxury Estates | Premium LUXURY ESTATES, VILLAS & COMMERCIAL ARCHITECTURE in Dubai</title>
-  
-  <meta name="description" content="Malibu Luxury Estates — Architectural Landmarks Engineered for Generations in Dubai. WhatsApp direct booking: +971521908847">
-  <meta name="theme-color" content="#030712">
+  <title>THE MALIBU RESIDENCES | Ultra-Luxury Sky Mansions & Penthouses</title>
+  <meta name="description" content="Exclusive private waterfront estates & sky penthouses in Dubai & Malibu. Private helipads, concierge yacht slips, and panoramic horizons.">
+  <meta name="theme-color" content="#09090b">
 
-  <!-- Tailwind CSS & Three.js -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&family=JetBrains+Mono:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-      background-color: #030712;
-      color: #f8fafc;
-    }
     body {
-      background-color: #030712;
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      overflow-x: clip;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #09090b;
+      color: #f4f4f5;
+      overflow-x: hidden;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.16) 0px, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-      transform: translateZ(0);
-      will-change: transform;
+
+    .font-serif-luxury {
+      font-family: 'Cinzel', serif;
     }
-    .font-display { font-family: 'Space Grotesk', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef08a 0%, #d4af37 40%, #ca8a04 80%, #996515 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border {
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .gold-border-subtle {
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
+
+    .gold-glow {
+      box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.25);
+    }
+
+    .obsidian-card {
+      background: linear-gradient(180deg, rgba(24, 24, 27, 0.85) 0%, rgba(9, 9, 11, 0.95) 100%);
+      backdrop-filter: blur(20px);
+    }
   </style>
 </head>
-<body class="relative min-h-screen text-slate-100">
+<body class="selection:bg-amber-600 selection:text-white">
 
-  <!-- Top Floating Nav -->
-  <header class="relative z-20 max-w-5xl mx-auto px-4 pt-4 sm:pt-6">
-    <div class="px-5 py-3.5 rounded-2xl border border-cyan-500/25 flex items-center justify-between gap-3 bg-slate-950/70 backdrop-blur-xl shadow-xl">
+  <!-- International VIP Concierge Bar -->
+  <div class="border-b border-amber-900/30 bg-black/60 backdrop-blur-md px-6 py-2.5 text-[11px] tracking-widest uppercase text-amber-200/80">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-orange-500 to-indigo-600 p-[1.5px] shadow-lg flex-shrink-0">
-          <div class="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center font-bold text-white text-lg">
-            ✦
-          </div>
-        </div>
-        <div>
-          <span class="font-display font-black text-lg tracking-wider text-white">Malibu Luxury Estates</span>
-          <span class="block text-[11px] text-slate-400 font-mono">DUBAI • APPOINTMENT & INQUIRIES</span>
-        </div>
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+        <span>Dubai Marina &amp; Malibu Beachfront Portfolios Open for Q4 Private Placements</span>
       </div>
+      <div class="flex items-center gap-4">
+        <span>VIP Desk (WhatsApp / Signal): <a href="https://wa.me/971501234567" class="text-amber-400 font-bold hover:underline">+971 50 123 4567</a></span>
+        <span class="hidden sm:inline border-l border-amber-800/40 pl-4 text-zinc-400">Escrow Secured by Dubai Land Dept</span>
+      </div>
+    </div>
+  </div>
 
-      <div class="flex items-center gap-2">
-        <a href="https://wa.me/971521908847?text=Hello%20Malibu%20Luxury%20Estates,%20I%20would%20like%20to%20book%20an%20appointment/inquiry!" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-black transition shadow-lg shadow-emerald-500/30">
-          <span>💬 Book WhatsApp</span>
+  <!-- Editorial Architectural Header -->
+  <header class="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      
+      <!-- Brand -->
+      <a href="#" class="flex flex-col group">
+        <span class="font-serif-luxury font-black text-2xl tracking-[0.25em] text-zinc-100 group-hover:text-amber-300 transition">MALIBU &amp; CO.</span>
+        <span class="text-[9px] tracking-[0.4em] uppercase text-amber-500 font-semibold mt-0.5">International Private Estates</span>
+      </a>
+
+      <!-- Currency Switcher & VIP Request -->
+      <div class="flex items-center gap-6">
+        <!-- Currency Selector -->
+        <div class="hidden md:flex items-center gap-1.5 p-1 rounded-lg bg-zinc-900 border border-zinc-800 text-xs">
+          <button onclick="setCurrency('AED', 3.67)" id="curAED" class="px-2.5 py-1 rounded text-zinc-400 hover:text-white transition font-bold font-mono">AED</button>
+          <button onclick="setCurrency('USD', 1.0)" id="curUSD" class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 font-bold font-mono">USD $</button>
+          <button onclick="setCurrency('EUR', 0.92)" id="curEUR" class="px-2.5 py-1 rounded text-zinc-400 hover:text-white transition font-bold font-mono">EUR €</button>
+          <button onclick="setCurrency('INR', 86.5)" id="curINR" class="px-2.5 py-1 rounded text-zinc-400 hover:text-white transition font-bold font-mono">INR ₹</button>
+        </div>
+
+        <a href="#private-viewing" class="gold-border text-amber-300 hover:bg-amber-500 hover:text-black font-serif-luxury text-xs tracking-widest uppercase px-6 py-3.5 transition duration-300 gold-glow">
+          Request Private Viewing
         </a>
       </div>
+
     </div>
   </header>
 
-  <!-- Hero Section with Interactive 3D Arena -->
-  <main class="relative z-10 max-w-5xl mx-auto px-4 py-12 text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-[11px] font-mono text-amber-400 mb-6 shadow-md">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <span>LUXURY ESTATES, VILLAS & COMMERCIAL ARCHITECTURE</span>
+  <!-- Hero with Architectural 3D Skyscraper Blueprint -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Narrative -->
+      <div class="lg:col-span-7 space-y-8">
+        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-amber-950/30 border border-amber-600/30 text-amber-400 text-xs tracking-wider uppercase font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>Limited Collection of 8 Sky Mansions</span>
+        </div>
+
+        <h1 class="font-serif-luxury font-black text-4xl sm:text-6xl text-zinc-100 tracking-tight leading-[1.1]">
+          Where the Horizon Meets <br><span class="gold-gradient-text">Architectural Immortality.</span>
+        </h1>
+
+        <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+          Suspended between the azure sky and Arabian Gulf. Designed by Pritzker Prize laureates with private infinity cantilever pools, triple-height glass galleries, and biometric yacht berths.
+        </p>
+
+        <!-- Estate Highlights Specs -->
+        <div class="grid grid-cols-3 gap-6 pt-4 border-t border-zinc-800">
+          <div>
+            <div class="font-serif-luxury text-2xl text-amber-400 font-bold">14,800</div>
+            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">Interior Sq. Ft.</div>
+          </div>
+          <div>
+            <div class="font-serif-luxury text-2xl text-amber-400 font-bold">360°</div>
+            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">Panoramic Skyline</div>
+          </div>
+          <div>
+            <div class="font-serif-luxury text-2xl text-amber-400 font-bold">100%</div>
+            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">Freehold Ownership</div>
+          </div>
+        </div>
+
+        <!-- VIP Direct WhatsApp Connect -->
+        <div class="pt-2 flex flex-wrap items-center gap-5">
+          <a href="https://wa.me/971501234567?text=Good%20day,%20I%20am%20interested%20in%20arranging%20a%20confidential%20viewing%20for%20The%20Malibu%20Sky%20Mansions." target="_blank" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-serif-luxury font-black text-xs tracking-widest uppercase px-8 py-4 transition shadow-2xl flex items-center gap-3">
+            <span>Arrange Confidential Presentation</span>
+            <span>➔</span>
+          </a>
+          <span class="text-xs text-zinc-500 font-light">Private chauffeur transfer arranged upon inquiry</span>
+        </div>
+      </div>
+
+      <!-- Right: Interactive 3D Architectural Blueprint -->
+      <div class="lg:col-span-5">
+        <div class="obsidian-card p-6 gold-border relative">
+          <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
+            <span class="font-serif-luxury text-xs tracking-widest text-amber-400 uppercase">Interactive Architectural Blueprint</span>
+            <span class="text-[10px] text-zinc-400 font-mono">Rotate 360°</span>
+          </div>
+
+          <div class="w-full h-96 relative mt-4 bg-zinc-950/80 overflow-hidden">
+            <canvas id="luxuryTowerCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+            <div class="absolute top-3 left-3 bg-black/80 px-3 py-1 text-[10px] font-mono text-amber-300 border border-amber-500/30">
+              Tower A: Levels 60 - 84
+            </div>
+            <div class="absolute bottom-3 right-3 bg-black/80 px-3 py-1 text-[10px] font-mono text-zinc-400 border border-zinc-800">
+              Biometric Private Elevator
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
+            <span>Dubai Harbor / Palm Jumeirah View</span>
+            <span class="text-amber-400 font-mono">Handover Q3 2027</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <h1 class="font-display font-black text-4xl sm:text-6xl tracking-tight max-w-3xl mx-auto leading-none mb-6">
-      Architectural Landmarks Engineered for Generations
-    </h1>
+  <!-- Interactive Residence Tier & Valuation Calculator -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="obsidian-card p-8 sm:p-12 gold-border">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs font-serif-luxury tracking-widest text-amber-400 uppercase">Confidential Acquisition</span>
+          <h2 class="font-serif-luxury font-bold text-3xl sm:text-4xl text-zinc-100">Estate Portfolio Valuation</h2>
+          <p class="text-zinc-400 text-sm leading-relaxed font-light">
+            Review floorplan allocation, estimated capital appreciation, and flexible 60/40 construction-linked investor payment schedules.
+          </p>
 
-    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-medium leading-relaxed">
-      Exclusive residential developments and premium commercial properties in prime Dubai locations. Schedule private site visits directly on WhatsApp.
-    </p>
+          <div class="space-y-3 pt-3">
+            <div class="flex items-center gap-3 text-xs text-zinc-300">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>UAE Golden Visa (10-Year Family Residency) Qualified</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-zinc-300">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>0% Capital Gains &amp; 0% Property Income Tax</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-zinc-300">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>Guaranteed 8.4% Net Projected Rental Yield in Prime Portfolios</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- Direct Action Buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-      <a href="https://wa.me/971521908847?text=Hi%20Malibu%20Luxury%20Estates,%20I%20want%20to%20schedule%20a%20priority%20consultation" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-indigo-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition">
-        Book Appointment on WhatsApp ➔
-      </a>
-      <a href="tel:971521908847" class="px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-white font-bold text-xs font-mono transition">
-        📞 Call Direct: +971521908847
-      </a>
-    </div>
+        <div class="lg:col-span-7 bg-zinc-900/90 p-8 gold-border-subtle space-y-6">
+          <div>
+            <label class="block text-xs font-serif-luxury tracking-wider text-amber-300 uppercase mb-2">Select Residence Configuration</label>
+            <select id="residenceTier" onchange="calculateValuation()" class="w-full bg-black border border-zinc-700 p-3.5 text-sm font-serif-luxury text-zinc-100 focus:outline-none focus:border-amber-400 cursor-pointer">
+              <option value="4200000">4-Bedroom Duplex Sky Villa (8,200 Sq. Ft.)</option>
+              <option value="7800000" selected>5-Bedroom Grand Horizon Penthouse with Infinity Pool (12,400 Sq. Ft.)</option>
+              <option value="14500000">The Crown Triplex Mansion with Private Helipad Slip (21,000 Sq. Ft.)</option>
+            </select>
+          </div>
 
-    <!-- 3D Interactive Viewport -->
-    <div class="relative w-full max-w-2xl mx-auto h-[320px] rounded-3xl bg-slate-950/80 border border-slate-800 shadow-2xl overflow-hidden mb-16 flex items-center justify-center">
-      <canvas id="threeArena" class="w-full h-full"></canvas>
-      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-[10px] font-mono text-cyan-300 pointer-events-none">
-        ✦ INTERACTIVE 3D PERSPECTIVE: DRAG TO ROTATE
+          <!-- Dynamic Output Card -->
+          <div class="p-6 bg-black border border-amber-500/30 flex flex-wrap items-center justify-between gap-6">
+            <div>
+              <span class="text-[11px] text-zinc-400 tracking-widest uppercase block font-serif-luxury">Acquisition Price</span>
+              <span id="valuationPrice" class="font-serif-luxury font-black text-3xl gold-gradient-text">$7,800,000</span>
+            </div>
+            <div class="text-right">
+              <span class="text-[11px] text-amber-400 tracking-widest uppercase block font-serif-luxury">20% Booking Deposit</span>
+              <span id="depositPrice" class="font-mono font-bold text-2xl text-zinc-100">$1,560,000</span>
+            </div>
+          </div>
+
+          <a id="valuationWALink" href="https://wa.me/971501234567?text=Good%20day,%20I%20wish%20to%20register%20interest%20in%20the%205-Bedroom%20Grand%20Horizon%20Penthouse%20valued%20at%20$7,800,000." target="_blank" class="block w-full py-4 text-center bg-amber-500 hover:bg-amber-400 text-black font-serif-luxury font-bold text-xs tracking-widest uppercase transition">
+            Reserve Priority Allocation via WhatsApp ➔
+          </a>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- Key Metrics Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-16">
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">45+ Projects</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Delivered On-Time</div>
-        </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">100%</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Approved DTCP & RERA Plans</div>
-        </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">4.9 ★</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Investor Satisfaction</div>
-        </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">24/7</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">VIP Concierge Access</div>
-        </div>
-      
-    </div>
+  <!-- Private Viewing Desk -->
+  <section id="private-viewing" class="max-w-4xl mx-auto px-6 py-16 text-center">
+    <div class="obsidian-card p-10 gold-border space-y-6">
+      <span class="font-serif-luxury text-xs text-amber-400 uppercase tracking-widest">Confidential Registry</span>
+      <h3 class="font-serif-luxury font-bold text-3xl text-zinc-100">Schedule a Confidential Preview</h3>
+      <p class="text-zinc-400 text-sm max-w-lg mx-auto font-light">
+        Private presentations conducted at our Dubai International Financial Centre (DIFC) Salon or via secure encrypted digital brief.
+      </p>
 
-    <!-- Specialized Services Grid -->
-    <div class="text-left mb-16">
-      <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-6 text-center">Featured Specializations</h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">🏡</div>
-            <h3 class="font-bold text-lg text-white mb-1">Custom Luxury Villas</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Turnkey architectural marvels with smart home automation and sustainable design.</p>
-            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Custom%20Luxury%20Villas" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">📐</div>
-            <h3 class="font-bold text-lg text-white mb-1">Premium Residential Plots</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Gated community layouts with wide blacktop roads and underground utilities.</p>
-            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Premium%20Residential%20Plots" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">🏢</div>
-            <h3 class="font-bold text-lg text-white mb-1">Commercial Complexes</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">High-yield commercial spaces designed for maximum rental returns.</p>
-            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Commercial%20Complexes" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">🏗️</div>
-            <h3 class="font-bold text-lg text-white mb-1">Turnkey Construction</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">End-to-end structural execution with strict quality compliance guarantees.</p>
-            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Turnkey%20Construction" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-      </div>
-    </div>
-
-    <!-- Quick Direct Booking Box -->
-    <div class="p-8 rounded-3xl bg-slate-950/70 border border-cyan-500/30 text-left max-w-xl mx-auto shadow-2xl">
-      <h3 class="font-display font-black text-2xl text-white mb-2 text-center">Fast-Track Your Appointment</h3>
-      <p class="text-xs text-slate-400 text-center mb-6">Skip reception waiting lines. Connect directly with our priority desk.</p>
-      
-      <form onsubmit="handleLeadSubmit(event)" class="space-y-3">
-        <input type="text" id="custName" required placeholder="Your Full Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
-        <input type="tel" id="custPhone" required placeholder="Your Mobile Number" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
-        <select id="custService" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-cyan-300 focus:outline-none focus:border-cyan-400 cursor-pointer">
-          <option value="Custom Luxury Villas">Custom Luxury Villas</option><option value="Premium Residential Plots">Premium Residential Plots</option><option value="Commercial Complexes">Commercial Complexes</option><option value="Turnkey Construction">Turnkey Construction</option>
-        </select>
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-indigo-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg">
-          Confirm Appointment on WhatsApp ➔
+      <form onsubmit="handleVIPInquiry(event)" class="max-w-md mx-auto space-y-4 text-left pt-4">
+        <div>
+          <label class="block text-[11px] font-serif-luxury text-zinc-300 uppercase tracking-wider mb-1">Principal / Representative Name</label>
+          <input type="text" id="vipName" required placeholder="Lord / Sheikh / Mr. Alexander Wright" class="w-full bg-black border border-zinc-700 px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
+        </div>
+        <div>
+          <label class="block text-[11px] font-serif-luxury text-zinc-300 uppercase tracking-wider mb-1">Direct Contact (Phone / Signal)</label>
+          <input type="tel" id="vipContact" required placeholder="+971 50 ... or +1 310 ..." class="w-full bg-black border border-zinc-700 px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-400">
+        </div>
+        <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-400 text-black font-serif-luxury font-black text-xs uppercase tracking-widest transition">
+          Submit Confidential Request ➔
         </button>
       </form>
     </div>
-  </main>
+  </section>
 
-  <!-- Footer -->
-  <footer class="relative z-10 max-w-5xl mx-auto px-4 py-8 text-center text-xs text-slate-500 border-t border-slate-900 mt-16">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      <span>© 2026 Malibu Luxury Estates. All Rights Reserved.</span>
-      <span class="font-mono text-[11px]">Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-cyan-400 font-bold hover:underline">SuperNova Studio</a></span>
+  <!-- Luxury Footer -->
+  <footer class="border-t border-zinc-900 bg-black py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6 text-xs text-zinc-500">
+      <div>
+        <span class="font-serif-luxury tracking-widest text-zinc-400">© 2026 THE MALIBU RESIDENCES INTERNATIONAL.</span> All rights reserved.
+      </div>
+      <div class="font-mono text-[11px]">
+        Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-amber-400 font-bold hover:underline">SuperNova Studio</a>
+      </div>
     </div>
   </footer>
 
-  <!-- 3D Interactive Script -->
+  <!-- 3D Skyscraper Wireframe Blueprint Engine -->
   <script>
-    (function init3D() {
-      const canvas = document.getElementById('threeArena');
+    let currentCurrency = 'USD';
+    let currentRate = 1.0;
+    let currencySymbol = '$';
+
+    function setCurrency(cur, rate) {
+      currentCurrency = cur;
+      currentRate = rate;
+      ['curAED', 'curUSD', 'curEUR', 'curINR'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (id === 'cur' + cur) {
+          btn.className = "px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 font-bold font-mono";
+        } else {
+          btn.className = "px-2.5 py-1 rounded text-zinc-400 hover:text-white transition font-bold font-mono";
+        }
+      });
+      currencySymbol = cur === 'USD' ? '$' : cur === 'EUR' ? '€' : cur === 'INR' ? '₹' : 'AED ';
+      calculateValuation();
+    }
+
+    function calculateValuation() {
+      const baseUSD = parseFloat(document.getElementById('residenceTier').value);
+      const converted = baseUSD * currentRate;
+      const deposit = converted * 0.20;
+
+      const formattedVal = currencySymbol + Math.round(converted).toLocaleString('en-US');
+      const formattedDep = currencySymbol + Math.round(deposit).toLocaleString('en-US');
+
+      document.getElementById('valuationPrice').textContent = formattedVal;
+      document.getElementById('depositPrice').textContent = formattedDep;
+
+      const selectElem = document.getElementById('residenceTier');
+      const tierText = selectElem.options[selectElem.selectedIndex].text.split('(')[0].trim();
+      const waLink = `https://wa.me/971501234567?text=Good%20day,%20I%20wish%20to%20register%20confidential%20interest%20in%20the%20${encodeURIComponent(tierText)}%20valued%20at%20${encodeURIComponent(formattedVal)}.`;
+      document.getElementById('valuationWALink').href = waLink;
+    }
+
+    function handleVIPInquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('vipName').value.trim();
+      const contact = document.getElementById('vipContact').value.trim();
+      const text = `Confidential VIP Inquiry:%0A%0A*Principal:* ${encodeURIComponent(name)}%0A*Contact:* ${encodeURIComponent(contact)}%0A*Portfolio:* The Malibu Residences Sky Mansions`;
+      window.open(`https://wa.me/971501234567?text=${text}`, '_blank');
+    }
+
+    // 3D Architectural Gold Tower Blueprint
+    (function initLuxuryTower() {
+      const canvas = document.getElementById('luxuryTowerCanvas');
       if (!canvas || typeof THREE === 'undefined') return;
 
       const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -197,73 +317,105 @@
       renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-      camera.position.z = 4.5;
+      const camera = new THREE.PerspectiveCamera(40, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+      camera.position.set(0, 1.5, 5.2);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-      scene.add(ambientLight);
+      const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+      scene.add(ambient);
 
-      const dirLight = new THREE.DirectionalLight(0x06b6d4, 2.5);
-      dirLight.position.set(5, 5, 5);
-      scene.add(dirLight);
+      const goldLight = new THREE.PointLight(0xd4af37, 3.5, 20);
+      goldLight.position.set(3, 4, 3);
+      scene.add(goldLight);
 
-      const group = new THREE.Group();
+      const blueRim = new THREE.PointLight(0x38bdf8, 1.5, 20);
+      blueRim.position.set(-3, -2, -2);
+      scene.add(blueRim);
 
-      // Niche-tailored 3D geometric centerpiece
-      const geom = new THREE.TorusKnotGeometry(1, 0.32, 128, 32);
-      const mat = new THREE.MeshStandardMaterial({
-        color: 0x06b6d4,
-        roughness: 0.15,
-        metalness: 0.85,
-        wireframe: false
-      });
-      const mesh = new THREE.Mesh(geom, mat);
-      group.add(mesh);
+      const towerGroup = new THREE.Group();
 
-      const wireGeom = new THREE.IcosahedronGeometry(1.6, 2);
-      const wireMat = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.25 });
-      const wireMesh = new THREE.Mesh(wireGeom, wireMat);
-      group.add(wireMesh);
+      // Multi-tier spiraling skyscraper architectural wireframes
+      const tiers = 6;
+      for (let t = 0; t < tiers; t++) {
+        const h = 0.55;
+        const w = 1.3 - (t * 0.14);
+        const geom = new THREE.BoxGeometry(w, h, w);
+        const edges = new THREE.EdgesGeometry(geom);
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({
+          color: t % 2 === 0 ? 0xd4af37 : 0xfef08a,
+          transparent: true,
+          opacity: 0.85
+        }));
+        line.position.y = (t * 0.58) - 1.2;
+        line.rotation.y = t * 0.12; // Architectural twist
+        towerGroup.add(line);
 
-      scene.add(group);
+        // Core glass spine
+        const glassGeom = new THREE.BoxGeometry(w * 0.85, h * 0.95, w * 0.85);
+        const glassMat = new THREE.MeshPhysicalMaterial({
+          color: 0x09090b,
+          roughness: 0.1,
+          metalness: 0.9,
+          transmission: 0.4,
+          transparent: true,
+          opacity: 0.7
+        });
+        const glassMesh = new THREE.Mesh(glassGeom, glassMat);
+        glassMesh.position.y = (t * 0.58) - 1.2;
+        glassMesh.rotation.y = t * 0.12;
+        towerGroup.add(glassMesh);
+      }
+
+      // Spire beacon
+      const spireGeom = new THREE.ConeGeometry(0.12, 0.8, 4);
+      const spireEdges = new THREE.EdgesGeometry(spireGeom);
+      const spireLine = new THREE.LineSegments(spireEdges, new THREE.LineBasicMaterial({ color: 0xfff, opacity: 0.9 }));
+      spireLine.position.y = (tiers * 0.58) - 0.8;
+      towerGroup.add(spireLine);
+
+      // Shimmering Golden Dust Constellation
+      const dustCount = 80;
+      const dustGeom = new THREE.BufferGeometry();
+      const dustPos = new Float32Array(dustCount * 3);
+      for (let i = 0; i < dustCount * 3; i += 3) {
+        dustPos[i] = (Math.random() - 0.5) * 4;
+        dustPos[i+1] = (Math.random() - 0.5) * 4;
+        dustPos[i+2] = (Math.random() - 0.5) * 4;
+      }
+      dustGeom.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+      const dustMat = new THREE.PointsMaterial({ color: 0xd4af37, size: 0.035, transparent: true, opacity: 0.75 });
+      const dustMesh = new THREE.Points(dustGeom, dustMat);
+      towerGroup.add(dustMesh);
+
+      scene.add(towerGroup);
 
       let isDragging = false;
-      let prevMouseX = 0;
-      let rotVelY = 0.005;
+      let prevX = 0;
 
-      canvas.addEventListener('mousedown', (e) => { isDragging = true; prevMouseX = e.clientX; });
+      canvas.addEventListener('mousedown', (e) => { isDragging = true; prevX = e.clientX; });
       window.addEventListener('mouseup', () => { isDragging = false; });
       window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
-        const deltaX = e.clientX - prevMouseX;
-        group.rotation.y += deltaX * 0.01;
-        prevMouseX = e.clientX;
+        const dx = e.clientX - prevX;
+        towerGroup.rotation.y += dx * 0.01;
+        prevX = e.clientX;
+      });
+
+      canvas.addEventListener('touchstart', (e) => { isDragging = true; prevX = e.touches[0].clientX; });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].clientX - prevX;
+        towerGroup.rotation.y += dx * 0.01;
+        prevX = e.touches[0].clientX;
       });
 
       function animate() {
         requestAnimationFrame(animate);
-        if (!isDragging) group.rotation.y += rotVelY;
-        group.rotation.x += 0.002;
+        if (!isDragging) towerGroup.rotation.y += 0.004;
         renderer.render(scene, camera);
       }
       animate();
-
-      window.addEventListener('resize', () => {
-        if (!canvas) return;
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-      });
     })();
-
-    function handleLeadSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('custName').value;
-      const phone = document.getElementById('custPhone').value;
-      const srv = document.getElementById('custService').value;
-      const msg = `Hello ${encodeURIComponent('Malibu Luxury Estates')}! My name is ${encodeURIComponent(name)} (${encodeURIComponent(phone)}). I would like to book a priority appointment for: ${encodeURIComponent(srv)}.`;
-      window.open(`https://wa.me/971521908847?text=${msg}`, '_blank');
-    }
   </script>
 </body>
 </html>

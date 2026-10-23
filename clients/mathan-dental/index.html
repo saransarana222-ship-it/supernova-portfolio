@@ -3,193 +3,380 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mathan Dental Clinic | Premium ADVANCED COSMETIC & RESTORATIVE DENTISTRY in Nagapattinam</title>
-  
-  <meta name="description" content="Mathan Dental Clinic — World-Class Dental Care & Painless Smile Transformations in Nagapattinam. WhatsApp direct booking: +917448821021">
-  <meta name="theme-color" content="#030712">
+  <title>Dr. Mathan MDS | Advanced Aesthetic Dentistry & Implant Center</title>
+  <meta name="description" content="Experience painless, European-standard smile makeovers & dental implants in Nagapattinam by Dr. Mathan MDS.">
+  <meta name="theme-color" content="#f8fafc">
 
-  <!-- Tailwind CSS & Three.js -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&family=JetBrains+Mono:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-    html {
-      scroll-behavior: smooth;
-      background-color: #030712;
-      color: #f8fafc;
+    :root {
+      --primary-teal: #0d9488;
+      --soft-mint: #f0fdfa;
+      --clinical-white: #ffffff;
     }
+
     body {
-      background-color: #030712;
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      overflow-x: clip;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(204, 251, 241, 0.45) 0%, rgba(255, 255, 255, 1) 45%, rgba(241, 245, 249, 0.7) 100%);
+      color: #0f172a;
+      overflow-x: hidden;
     }
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.16) 0px, transparent 50%);
+
+    .font-brand {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 20px 40px -15px rgba(13, 148, 136, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .glass-teal {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.08) 0%, rgba(45, 212, 191, 0.04) 100%);
+      border: 1px solid rgba(13, 148, 136, 0.2);
+    }
+
+    .badge-pulse {
+      box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.5);
+      animation: pulseTeal 2.2s infinite;
+    }
+
+    @keyframes pulseTeal {
+      0% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(13, 148, 136, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); }
+    }
+
+    /* Comparison Slider */
+    .compare-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.25rem;
+      user-select: none;
+    }
+    .compare-overlay {
+      position: absolute;
+      top: 0; left: 0; height: 100%;
+      overflow: hidden;
       pointer-events: none;
-      z-index: 0;
-      transform: translateZ(0);
-      will-change: transform;
     }
-    .font-display { font-family: 'Space Grotesk', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
   </style>
 </head>
-<body class="relative min-h-screen text-slate-100">
+<body class="selection:bg-teal-500 selection:text-white">
 
-  <!-- Top Floating Nav -->
-  <header class="relative z-20 max-w-5xl mx-auto px-4 pt-4 sm:pt-6">
-    <div class="px-5 py-3.5 rounded-2xl border border-cyan-500/25 flex items-center justify-between gap-3 bg-slate-950/70 backdrop-blur-xl shadow-xl">
+  <!-- Top Emergency Triage & Schedule Banner -->
+  <div class="bg-slate-900 text-white text-[11px] sm:text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-medium text-slate-300">Dental Emergency Hotline Active 24/7 in Nagapattinam:</span>
+        <a href="tel:+919443152643" class="text-teal-300 font-bold hover:underline">+91 94431 52643</a>
+      </div>
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-teal-500 to-indigo-500 p-[1.5px] shadow-lg flex-shrink-0">
-          <div class="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center font-bold text-white text-lg">
-            ✦
-          </div>
+        <span class="text-slate-400">Consultation: Mon - Sat 9:30 AM – 8:30 PM</span>
+        <span class="bg-teal-500/20 text-teal-300 px-2 py-0.5 rounded font-semibold text-[10px]">ISO 9001 Certified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clinical Nav -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-600 to-cyan-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform">
+          <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C7 2 4 5 4 10c0 4 2 9 4 12 1 1.5 2.5 1 4-1 1.5 2 3 2.5 4 1 2-3 4-8 4-12 0-5-3-8-8-8z"/>
+            <path d="M9 10h6"/>
+          </svg>
         </div>
         <div>
-          <span class="font-display font-black text-lg tracking-wider text-white">Mathan Dental Clinic</span>
-          <span class="block text-[11px] text-slate-400 font-mono">NAGAPATTINAM • APPOINTMENT & INQUIRIES</span>
+          <span class="font-brand font-black text-xl text-slate-900 tracking-tight block">MATHAN DENTAL</span>
+          <span class="text-[10px] tracking-wider uppercase font-semibold text-teal-700 block -mt-1">Aesthetic & Implant Surgery Center</span>
         </div>
-      </div>
+      </a>
 
-      <div class="flex items-center gap-2">
-        <a href="https://wa.me/917448821021?text=Hello%20Mathan%20Dental%20Clinic,%20I%20would%20like%20to%20book%20an%20appointment/inquiry!" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-black transition shadow-lg shadow-emerald-500/30">
-          <span>💬 Book WhatsApp</span>
+      <!-- Quick Nav Action -->
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex flex-col text-right">
+          <span class="text-[11px] text-slate-400 font-medium">Chief Surgeon</span>
+          <span class="text-xs font-bold text-slate-800">Dr. K. Mathan MDS (Perio & Implantology)</span>
+        </div>
+        <a href="#book-desk" class="bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs px-5 py-3 rounded-xl shadow-lg shadow-teal-600/25 transition hover:-translate-y-0.5 flex items-center gap-2">
+          <span>Book Priority Visit</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section with Interactive 3D Arena -->
-  <main class="relative z-10 max-w-5xl mx-auto px-4 py-12 text-center">
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-[11px] font-mono text-cyan-400 mb-6 shadow-md">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <span>ADVANCED COSMETIC & RESTORATIVE DENTISTRY</span>
+  <!-- Hero Section with 3D Enamel Structure & Patient Assurance -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-teal-600 badge-pulse"></span>
+          <span>Zero Waiting Time Guarantee • Painless Computerized Anesthesia</span>
+        </div>
+
+        <h1 class="font-brand font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-[1.12]">
+          Crafting Flawless, Natural Smiles with <span class="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 via-teal-700 to-cyan-600">Microsurgical Precision.</span>
+        </h1>
+
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl">
+          Nagapattinam’s premier referral clinic for Swiss Dental Implants, Invisible Invisalign Aligners, and Full Mouth Rehabilitation. No needles, zero discomfort.
+        </p>
+
+        <!-- Doctor Trust Stats -->
+        <div class="grid grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+            <div class="font-brand font-black text-2xl text-teal-600">14+</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">Years Clinical Excellence</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+            <div class="font-brand font-black text-2xl text-teal-600">12,500+</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">Painless Smiles Delivered</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+            <div class="font-brand font-black text-2xl text-amber-500">4.9 ★</div>
+            <div class="text-xs text-slate-500 font-medium mt-0.5">640+ Verified Reviews</div>
+          </div>
+        </div>
+
+        <!-- 1-Click WhatsApp Direct Chat -->
+        <div class="pt-2 flex flex-wrap items-center gap-4">
+          <a href="https://wa.me/919443152643?text=Hello%20Dr.%20Mathan%20Dental%20Clinic,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-4 rounded-2xl shadow-xl shadow-emerald-600/20 flex items-center gap-3 transition transform hover:scale-[1.02]">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.06-2.001-.482-1.637-.677-2.709-2.348-2.791-2.459-.082-.111-.669-.889-.669-1.693 0-.804.421-1.2.572-1.354.144-.153.376-.226.549-.226.174 0 .289.003.407.013.125.01.293-.048.458.349.172.411.584 1.424.636 1.53.053.106.088.229.018.369-.069.14-.105.228-.208.349-.104.122-.218.272-.311.365-.104.104-.213.218-.092.427.121.209.539.889 1.156 1.439.794.707 1.464.926 1.674 1.029.209.104.331.088.455-.053.123-.141.527-.615.669-.826.141-.21.283-.176.474-.105.191.07 1.214.572 1.424.677.209.105.349.158.401.246.053.088.053.51-.091.915z"/></svg>
+            <span>WhatsApp Instant Appointment</span>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">No receptionist waiting • Instant reply within 5 mins</span>
+        </div>
+      </div>
+
+      <!-- Right 3D Interactive Enamel Sculpt Canvas -->
+      <div class="lg:col-span-5">
+        <div class="glass-card p-6 rounded-3xl relative">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-teal-500"></span>
+              <span class="font-brand font-bold text-xs text-slate-800 uppercase tracking-wider">3D Biomimetic Model</span>
+            </div>
+            <span class="text-[11px] text-slate-400 font-mono">Interactive: Drag to Rotate</span>
+          </div>
+
+          <div class="w-full h-80 rounded-2xl overflow-hidden relative mt-3 bg-gradient-to-b from-slate-50 to-teal-50/40">
+            <canvas id="tooth3DCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
+            <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1.5 rounded-xl border border-slate-200/80 text-[11px] text-slate-600 font-medium shadow-sm">
+              ✨ Natural Pearlescent Enamel Coating
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+            <span class="font-medium">Nagapattinam Main Clinic</span>
+            <span class="font-bold text-teal-700">Near Public Office Road</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Before & After Smile Transformation Studio -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs font-bold text-teal-700 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Patient Results</span>
+      <h2 class="font-brand font-extrabold text-3xl sm:text-4xl text-slate-900 mt-3">Interactive Smile Transformation</h2>
+      <p class="text-slate-500 text-sm mt-2">See real clinical orthodontic & whitening results achieved right here in our clinic.</p>
     </div>
 
-    <h1 class="font-display font-black text-4xl sm:text-6xl tracking-tight max-w-3xl mx-auto leading-none mb-6">
-      World-Class Dental Care & Painless Smile Transformations
-    </h1>
+    <div class="max-w-3xl mx-auto glass-card p-6 sm:p-8 rounded-3xl">
+      <!-- Interactive Slider -->
+      <div class="compare-container h-80 sm:h-96 relative bg-slate-900 rounded-2xl overflow-hidden">
+        <!-- Before View -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-amber-950/80 via-slate-900 to-slate-950 p-8 text-center">
+          <span class="bg-red-500/20 text-red-300 font-bold px-3 py-1 rounded-full text-xs mb-3 border border-red-500/30">Day 1: Initial Presentation</span>
+          <h3 class="text-white text-xl sm:text-2xl font-brand font-bold max-w-md">Severe Crowding, Coffee Stains & Uneven Alignment</h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-sm">Patient felt self-conscious during social speaking and experienced chewing discomfort.</p>
+        </div>
 
-    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-medium leading-relaxed">
-      Serving Nagapattinam with cutting-edge dental technology, laser treatments, and patient-first comfort. Book appointments directly on WhatsApp with zero waiting friction.
-    </p>
+        <!-- After View (Clipped) -->
+        <div id="compareOverlay" class="compare-overlay inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-teal-950 via-slate-900 to-cyan-950 p-8 text-center" style="width: 50%;">
+          <span class="bg-emerald-500/20 text-emerald-300 font-bold px-3 py-1 rounded-full text-xs mb-3 border border-emerald-500/30">Week 12: Post Laser & Aligners</span>
+          <h3 class="text-white text-xl sm:text-2xl font-brand font-bold max-w-md">100% Symmetrical Arch, Micro-Polished Pearlescent Whitening</h3>
+          <p class="text-cyan-200 text-xs sm:text-sm mt-2 max-w-sm">Restored chewing biomechanics and confident movie-star radiant smile.</p>
+        </div>
 
-    <!-- Direct Action Buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-      <a href="https://wa.me/917448821021?text=Hi%20Mathan%20Dental%20Clinic,%20I%20want%20to%20schedule%20a%20priority%20consultation" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition">
-        Book Appointment on WhatsApp ➔
-      </a>
-      <a href="tel:917448821021" class="px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-white font-bold text-xs font-mono transition">
-        📞 Call Direct: +917448821021
-      </a>
-    </div>
+        <!-- Slider Line -->
+        <div id="sliderHandle" class="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize flex items-center justify-center" style="left: 50%;">
+          <div class="w-8 h-8 rounded-full bg-white text-slate-900 shadow-xl flex items-center justify-center text-xs font-black">
+            ⇄
+          </div>
+        </div>
+      </div>
 
-    <!-- 3D Interactive Viewport -->
-    <div class="relative w-full max-w-2xl mx-auto h-[320px] rounded-3xl bg-slate-950/80 border border-slate-800 shadow-2xl overflow-hidden mb-16 flex items-center justify-center">
-      <canvas id="threeArena" class="w-full h-full"></canvas>
-      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-[10px] font-mono text-cyan-300 pointer-events-none">
-        ✦ INTERACTIVE 3D PERSPECTIVE: DRAG TO ROTATE
+      <div class="mt-4 flex items-center justify-between text-xs text-slate-500 font-medium">
+        <span>◀ Drag to compare Initial vs Finished Smile</span>
+        <span class="text-teal-700 font-bold">Duration: 12 Weeks (Average)</span>
       </div>
     </div>
+  </section>
 
-    <!-- Key Metrics Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-16">
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-cyan-400">15,000+</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Happy Smiles Restored</div>
+  <!-- Transparent Dental Cost Calculator -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="glass-card p-8 sm:p-12 rounded-3xl border border-teal-100">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs font-bold text-teal-700 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200">100% Price Transparency</span>
+          <h2 class="font-brand font-black text-3xl text-slate-900">Treatment Cost & EMI Estimator</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            No surprise billing. Select your required treatment below to inspect the estimated investment and 0% interest monthly payment options.
+          </p>
+          
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
+              <span class="w-5 h-5 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold">✓</span>
+              <span>All major health & dental insurance accepted</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
+              <span class="w-5 h-5 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold">✓</span>
+              <span>Bajaj Finserv & Credit Card 0% No-Cost EMI</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs text-slate-700 font-medium">
+              <span class="w-5 h-5 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold">✓</span>
+              <span>Lifetime implant titanium warranty included</span>
+            </div>
+          </div>
         </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-cyan-400">99.8%</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Painless Procedure Rate</div>
-        </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-cyan-400">4.9 ★</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Google Patient Reviews</div>
-        </div>
-      
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="font-display font-black text-2xl sm:text-3xl text-cyan-400">0 Mins</div>
-          <div class="text-[11px] text-slate-400 font-mono mt-1">Direct WhatsApp Booking</div>
-        </div>
-      
-    </div>
 
-    <!-- Specialized Services Grid -->
-    <div class="text-left mb-16">
-      <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-6 text-center">Featured Specializations</h2>
-      <div class="grid sm:grid-cols-2 gap-4">
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">🦷</div>
-            <h3 class="font-bold text-lg text-white mb-1">Dental Implants & Surgery</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Permanent titanium root replacement with natural-feeling zirconia crowns.</p>
-            <a href="https://wa.me/917448821021?text=Hello,%20I%20am%20inquiring%20about%20Dental%20Implants%20%26%20Surgery" target="_blank" class="text-xs font-mono font-bold text-cyan-400 hover:underline">Inquire on WhatsApp ➔</a>
+        <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Select Primary Treatment</label>
+              <select id="dentalProcedure" onchange="calculateDentalCost()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:border-teal-500">
+                <option value="25000">Swiss Titanium Dental Implant (Complete Crown + Post)</option>
+                <option value="45000">Invisible Clear Aligners (Full Arch Smile Correction)</option>
+                <option value="6500">Laser In-Clinic Teeth Whitening (Single Sitting)</option>
+                <option value="4000">Microscope Root Canal + Ceramic Crown</option>
+                <option value="1500">Comprehensive Deep Ultrasonic Scaling & Polish</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Number of Teeth / Units: <span id="unitDisplay" class="text-teal-700 font-black">1</span></label>
+              <input type="range" id="unitRange" min="1" max="6" value="1" oninput="updateUnits(this.value)" class="w-full accent-teal-600 cursor-pointer">
+            </div>
+
+            <!-- Price Output Card -->
+            <div class="p-6 rounded-2xl bg-white border border-teal-200 shadow-sm flex flex-wrap items-center justify-between gap-4 mt-4">
+              <div>
+                <span class="text-xs text-slate-400 font-semibold uppercase block">Estimated Clinical Package</span>
+                <span id="totalCost" class="font-brand font-black text-3xl text-slate-900">₹25,000</span>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-teal-700 font-bold block">0% No-Cost EMI Starting At</span>
+                <span id="emiCost" class="font-brand font-black text-2xl text-teal-600">₹2,083 / mo</span>
+              </div>
+            </div>
+
+            <a id="calcWhatsappLink" href="https://wa.me/919443152643?text=Hi%20Doctor,%20I%20used%20the%20cost%20estimator%20for%20Swiss%20Titanium%20Dental%20Implant%20(₹25,000).%20Can%20I%20book%20an%20appointment?" target="_blank" class="block w-full py-3.5 text-center rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition">
+              Lock This Estimate on WhatsApp ➔
+            </a>
           </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">✨</div>
-            <h3 class="font-bold text-lg text-white mb-1">Invisible Clear Aligners</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Discreet teeth straightening without traditional wire braces.</p>
-            <a href="https://wa.me/917448821021?text=Hello,%20I%20am%20inquiring%20about%20Invisible%20Clear%20Aligners" target="_blank" class="text-xs font-mono font-bold text-cyan-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">💎</div>
-            <h3 class="font-bold text-lg text-white mb-1">Laser Teeth Whitening</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Instant 6-shade brighter smile transformation in a single 45-min session.</p>
-            <a href="https://wa.me/917448821021?text=Hello,%20I%20am%20inquiring%20about%20Laser%20Teeth%20Whitening" target="_blank" class="text-xs font-mono font-bold text-cyan-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
-          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
-            <div class="text-3xl mb-3">🛡️</div>
-            <h3 class="font-bold text-lg text-white mb-1">Painless Root Canals</h3>
-            <p class="text-xs text-slate-300 leading-relaxed mb-4">Microscope-assisted endodontics for same-day pain relief.</p>
-            <a href="https://wa.me/917448821021?text=Hello,%20I%20am%20inquiring%20about%20Painless%20Root%20Canals" target="_blank" class="text-xs font-mono font-bold text-cyan-400 hover:underline">Inquire on WhatsApp ➔</a>
-          </div>
-        
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Quick Direct Booking Box -->
-    <div class="p-8 rounded-3xl bg-slate-950/70 border border-cyan-500/30 text-left max-w-xl mx-auto shadow-2xl">
-      <h3 class="font-display font-black text-2xl text-white mb-2 text-center">Fast-Track Your Appointment</h3>
-      <p class="text-xs text-slate-400 text-center mb-6">Skip reception waiting lines. Connect directly with our priority desk.</p>
+  <!-- Clinic Address, Live Hours & Instant Booking -->
+  <section id="book-desk" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
-      <form onsubmit="handleLeadSubmit(event)" class="space-y-3">
-        <input type="text" id="custName" required placeholder="Your Full Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
-        <input type="tel" id="custPhone" required placeholder="Your Mobile Number" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
-        <select id="custService" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-cyan-300 focus:outline-none focus:border-cyan-400 cursor-pointer">
-          <option value="Dental Implants & Surgery">Dental Implants & Surgery</option><option value="Invisible Clear Aligners">Invisible Clear Aligners</option><option value="Laser Teeth Whitening">Laser Teeth Whitening</option><option value="Painless Root Canals">Painless Root Canals</option>
-        </select>
-        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg">
-          Confirm Appointment on WhatsApp ➔
-        </button>
-      </form>
-    </div>
-  </main>
+      <!-- Left: Clinic Info & Map -->
+      <div class="glass-card p-8 rounded-3xl space-y-6">
+        <div>
+          <span class="text-xs font-bold text-teal-700 tracking-wider uppercase bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Visit Us</span>
+          <h3 class="font-brand font-bold text-2xl text-slate-900 mt-2">Nagapattinam Central Clinic</h3>
+          <p class="text-slate-500 text-sm mt-1">Conveniently situated with dedicated patient four-wheeler & two-wheeler parking.</p>
+        </div>
 
-  <!-- Footer -->
-  <footer class="relative z-10 max-w-5xl mx-auto px-4 py-8 text-center text-xs text-slate-500 border-t border-slate-900 mt-16">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      <span>© 2026 Mathan Dental Clinic. All Rights Reserved.</span>
-      <span class="font-mono text-[11px]">Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-cyan-400 font-bold hover:underline">SuperNova Studio</a></span>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-start gap-3">
+            <span class="text-teal-600 text-lg">📍</span>
+            <div>
+              <strong class="text-slate-900 block">Clinic Address:</strong>
+              <span class="text-slate-600">No. 14, Public Office Road, Near Court Complex, Nagapattinam – 611001, Tamil Nadu.</span>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-teal-600 text-lg">⏰</span>
+            <div>
+              <strong class="text-slate-900 block">Clinical Operating Hours:</strong>
+              <span class="text-slate-600">Monday to Saturday: 9:30 AM – 1:30 PM &amp; 4:30 PM – 8:30 PM<br>Sunday: By Prior Appointment Only</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://maps.google.com/?q=Nagapattinam+Public+Office+Road" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-teal-700 hover:text-teal-800 bg-teal-50 px-4 py-2.5 rounded-xl border border-teal-200">
+          <span>Open Direct Google Maps Navigation ➔</span>
+        </a>
+      </div>
+
+      <!-- Right: Direct Booking Form -->
+      <div class="glass-card p-8 rounded-3xl border-2 border-teal-500/20 shadow-xl">
+        <h3 class="font-brand font-black text-2xl text-slate-900">Priority Patient Fast-Track</h3>
+        <p class="text-slate-500 text-xs mt-1 mb-6">Confirmed token sent to your WhatsApp in 2 minutes.</p>
+
+        <form onsubmit="handlePatientBooking(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Patient Full Name</label>
+            <input type="text" id="pName" required placeholder="e.g. Senthil Nathan" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-teal-600">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Mobile WhatsApp Number</label>
+            <input type="tel" id="pMobile" required placeholder="e.g. 98401 23456" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-teal-600">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Primary Concern</label>
+            <select id="pConcern" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-teal-600">
+              <option value="Toothache / Root Canal">Urgent Toothache / Root Canal Consultation</option>
+              <option value="Dental Implant Consultation">Permanent Dental Implant Consultation</option>
+              <option value="Smile Makeover / Aligners">Teeth Straightening / Invisible Aligners</option>
+              <option value="Routine Cleaning & Checkup">Routine Clean & Stain Removal</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full py-4 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition">
+            Confirm Priority Token on WhatsApp ➔
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clinic Footer -->
+  <footer class="border-t border-slate-200 bg-white py-10 mt-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        <span class="font-bold text-slate-800">© 2026 Dr. Mathan Dental Aesthetic Center.</span> All medical rights reserved.
+      </div>
+      <div class="font-mono text-[11px]">
+        Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-teal-700 font-bold hover:underline">SuperNova Studio</a>
+      </div>
     </div>
   </footer>
 
-  <!-- 3D Interactive Script -->
+  <!-- Scripts: 3D Tooth Model & Logic -->
   <script>
-    (function init3D() {
-      const canvas = document.getElementById('threeArena');
+    // 3D Pearlescent Crown Geometry
+    (function initTooth3D() {
+      const canvas = document.getElementById('tooth3DCanvas');
       if (!canvas || typeof THREE === 'undefined') return;
 
       const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -198,71 +385,153 @@
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-      camera.position.z = 4.5;
+      camera.position.set(0, 0, 4.2);
 
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-      scene.add(ambientLight);
+      const ambient = new THREE.AmbientLight(0xffffff, 0.95);
+      scene.add(ambient);
 
-      const dirLight = new THREE.DirectionalLight(0x06b6d4, 2.5);
-      dirLight.position.set(5, 5, 5);
-      scene.add(dirLight);
+      const keyLight = new THREE.DirectionalLight(0x0d9488, 2.5);
+      keyLight.position.set(4, 5, 4);
+      scene.add(keyLight);
 
-      const group = new THREE.Group();
+      const rimLight = new THREE.DirectionalLight(0x38bdf8, 1.8);
+      rimLight.position.set(-4, -2, -2);
+      scene.add(rimLight);
 
-      // Niche-tailored 3D geometric centerpiece
-      const geom = new THREE.TorusKnotGeometry(1, 0.32, 128, 32);
-      const mat = new THREE.MeshStandardMaterial({
-        color: 0x06b6d4,
-        roughness: 0.15,
-        metalness: 0.85,
-        wireframe: false
+      // Custom Biomimetic Crown Group
+      const crownGroup = new THREE.Group();
+
+      // Organic molar crown profile
+      const crownGeom = new THREE.CylinderGeometry(0.85, 0.6, 1.2, 32, 16);
+      const pos = crownGeom.attributes.position;
+      // Scuplting occlusal cusps
+      for (let i = 0; i < pos.count; i++) {
+        const y = pos.getY(i);
+        const x = pos.getX(i);
+        const z = pos.getZ(i);
+        if (y > 0.4) {
+          // Add 4 organic cusps
+          const cusp = Math.sin(x * 4.5) * Math.cos(z * 4.5) * 0.15;
+          pos.setY(i, y + cusp);
+        }
+      }
+      crownGeom.computeVertexNormals();
+
+      const enamelMaterial = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        emissive: 0x042f2e,
+        roughness: 0.12,
+        metalness: 0.05,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.1,
+        transmission: 0.25,
+        opacity: 0.95,
+        transparent: true
       });
-      const mesh = new THREE.Mesh(geom, mat);
-      group.add(mesh);
 
-      const wireGeom = new THREE.IcosahedronGeometry(1.6, 2);
-      const wireMat = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.25 });
-      const wireMesh = new THREE.Mesh(wireGeom, wireMat);
-      group.add(wireMesh);
+      const crownMesh = new THREE.Mesh(crownGeom, enamelMaterial);
+      crownGroup.add(crownMesh);
 
-      scene.add(group);
+      // Dual anatomical roots
+      const rootGeom1 = new THREE.ConeGeometry(0.28, 1.3, 16);
+      const rootMesh1 = new THREE.Mesh(rootGeom1, enamelMaterial);
+      rootMesh1.position.set(-0.35, -1.0, 0);
+      rootMesh1.rotation.z = Math.PI - 0.15;
+      crownGroup.add(rootMesh1);
+
+      const rootMesh2 = new THREE.Mesh(rootGeom1, enamelMaterial);
+      rootMesh2.position.set(0.35, -1.0, 0);
+      rootMesh2.rotation.z = Math.PI + 0.15;
+      crownGroup.add(rootMesh2);
+
+      scene.add(crownGroup);
 
       let isDragging = false;
-      let prevMouseX = 0;
-      let rotVelY = 0.005;
+      let prevX = 0;
+      let rotSpeed = 0.008;
 
-      canvas.addEventListener('mousedown', (e) => { isDragging = true; prevMouseX = e.clientX; });
+      canvas.addEventListener('mousedown', (e) => { isDragging = true; prevX = e.clientX; });
       window.addEventListener('mouseup', () => { isDragging = false; });
       window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
-        const deltaX = e.clientX - prevMouseX;
-        group.rotation.y += deltaX * 0.01;
-        prevMouseX = e.clientX;
+        const dx = e.clientX - prevX;
+        crownGroup.rotation.y += dx * 0.012;
+        prevX = e.clientX;
+      });
+
+      canvas.addEventListener('touchstart', (e) => { isDragging = true; prevX = e.touches[0].clientX; });
+      window.addEventListener('touchend', () => { isDragging = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].clientX - prevX;
+        crownGroup.rotation.y += dx * 0.012;
+        prevX = e.touches[0].clientX;
       });
 
       function animate() {
         requestAnimationFrame(animate);
-        if (!isDragging) group.rotation.y += rotVelY;
-        group.rotation.x += 0.002;
+        if (!isDragging) crownGroup.rotation.y += rotSpeed;
+        crownGroup.rotation.x = Math.sin(Date.now() * 0.001) * 0.08;
         renderer.render(scene, camera);
       }
       animate();
-
-      window.addEventListener('resize', () => {
-        if (!canvas) return;
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-      });
     })();
 
-    function handleLeadSubmit(e) {
+    // Interactive Before & After Slider
+    (function initCompareSlider() {
+      const container = document.querySelector('.compare-container');
+      const overlay = document.getElementById('compareOverlay');
+      const handle = document.getElementById('sliderHandle');
+      if (!container || !overlay || !handle) return;
+
+      let active = false;
+
+      function updateSlide(x) {
+        const rect = container.getBoundingClientRect();
+        let pos = (x - rect.left) / rect.width;
+        pos = Math.max(0.05, Math.min(0.95, pos));
+        overlay.style.width = (pos * 100) + '%';
+        handle.style.left = (pos * 100) + '%';
+      }
+
+      container.addEventListener('mousedown', (e) => { active = true; updateSlide(e.clientX); });
+      window.addEventListener('mouseup', () => { active = false; });
+      window.addEventListener('mousemove', (e) => { if (active) updateSlide(e.clientX); });
+
+      container.addEventListener('touchstart', (e) => { active = true; updateSlide(e.touches[0].clientX); });
+      window.addEventListener('touchend', () => { active = false; });
+      window.addEventListener('touchmove', (e) => { if (active) updateSlide(e.touches[0].clientX); });
+    })();
+
+    // Cost Calculator Logic
+    let currentUnits = 1;
+    function updateUnits(val) {
+      currentUnits = parseInt(val);
+      document.getElementById('unitDisplay').textContent = currentUnits;
+      calculateDentalCost();
+    }
+
+    function calculateDentalCost() {
+      const baseProcedure = parseInt(document.getElementById('dentalProcedure').value);
+      const total = baseProcedure * currentUnits;
+      const emi = Math.round(total / 12);
+
+      document.getElementById('totalCost').textContent = '₹' + total.toLocaleString('en-IN');
+      document.getElementById('emiCost').textContent = '₹' + emi.toLocaleString('en-IN') + ' / mo';
+
+      const selectElem = document.getElementById('dentalProcedure');
+      const procedureText = selectElem.options[selectElem.selectedIndex].text;
+      const waLink = `https://wa.me/919443152643?text=Hi%20Doctor,%20I%20used%20the%20cost%20estimator%20for%20${encodeURIComponent(procedureText)}%20(${currentUnits}%20unit(s)%20-%20₹${total.toLocaleString('en-IN')}).%20Can%20I%20book%20an%20appointment?`;
+      document.getElementById('calcWhatsappLink').href = waLink;
+    }
+
+    function handlePatientBooking(e) {
       e.preventDefault();
-      const name = document.getElementById('custName').value;
-      const phone = document.getElementById('custPhone').value;
-      const srv = document.getElementById('custService').value;
-      const msg = `Hello ${encodeURIComponent('Mathan Dental Clinic')}! My name is ${encodeURIComponent(name)} (${encodeURIComponent(phone)}). I would like to book a priority appointment for: ${encodeURIComponent(srv)}.`;
-      window.open(`https://wa.me/917448821021?text=${msg}`, '_blank');
+      const name = document.getElementById('pName').value.trim();
+      const phone = document.getElementById('pMobile').value.trim();
+      const concern = document.getElementById('pConcern').value;
+      const text = `Hello Dr. Mathan Clinic, I would like to book a priority appointment.%0A%0A*Patient:* ${encodeURIComponent(name)}%0A*Mobile:* ${encodeURIComponent(phone)}%0A*Concern:* ${encodeURIComponent(concern)}`;
+      window.open(`https://wa.me/919443152643?text=${text}`, '_blank');
     }
   </script>
 </body>
