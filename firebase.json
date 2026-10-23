@@ -26,6 +26,10 @@
         "destination": "/certificate.html"
       },
       {
+        "source": "/private-vault",
+        "destination": "/private-vault/index.html"
+      },
+      {
         "source": "/clients/sothebys-dubai",
         "destination": "/clients/sothebys-dubai/index.html"
       },
