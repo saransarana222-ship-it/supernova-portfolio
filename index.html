@@ -5317,6 +5317,30 @@
       let isSpeaking = false;
       let activeScreenStream = null;
 
+      // Customer Language Adaptation Engine (Auto, English, Tanglish, Hindi)
+      const langSelector = document.getElementById('jarvisLangSelector');
+      let selectedLang = 'auto'; // 'auto' | 'en' | 'tanglish' | 'hindi'
+
+      function detectQueryLanguage(text) {
+        if (selectedLang !== 'auto') return selectedLang;
+        const low = text.toLowerCase();
+
+        // Tanglish / Tamil signals
+        const tanglishSignals = ['vanakkam', 'sollu', 'sollunga', 'evlo', 'vilai', 'kasu', 'epdi', 'eppadi', 'pannu', 'venum', 'enga', 'yaaru', 'enna', 'irukku', 'kudu', 'nalla', 'nanri', 'illai', 'theriyuma', 'machan', 'thambi', 'anna', 'padikira', 'panradhu', 'paaru', 'kudunga', 'seekiram'];
+        for (const w of tanglishSignals) {
+          if (low.includes(w)) return 'tanglish';
+        }
+
+        // Hindi signals
+        const hindiSignals = ['namaste', 'bhai', 'kitna', 'kaise', 'karo', 'chahiye', 'kaha', 'kaun', 'kya', 'hai', 'achha', 'shukriya', 'batao', 'daam', 'paisa', 'jald'];
+        for (const w of hindiSignals) {
+          if (low.includes(w)) return 'hindi';
+        }
+
+        // Default to Global Executive English
+        return 'en';
+      }
+
       // Astra Screen Vision Multimodal Handler
       async function toggleScreenVision() {
         if (activeScreenStream) {
@@ -5433,8 +5457,8 @@
         if (!isSpeaking) setWaveActive(false);
       }
 
-      // 4. Web Speech Synthesis (Jarvis Voice)
-      function speakText(text) {
+      // 4. Web Speech Synthesis (Adaptive Voice)
+      function speakText(text, lang = 'en') {
         if (!('speechSynthesis' in window) || !JarvisAudio.soundEnabled) return;
         try {
           window.speechSynthesis.cancel();
@@ -5448,9 +5472,18 @@
           utterance.pitch = 0.95;
 
           const voices = window.speechSynthesis.getVoices();
-          // Prefer British/English male or crisp assistant voice
-          const preferredVoice = voices.find(v => v.lang.includes('en-GB') || v.name.includes('George') || v.name.includes('Daniel') || v.name.includes('Natural')) ||
-                                 voices.find(v => v.lang.startsWith('en')) || voices[0];
+          let preferredVoice = null;
+
+          if (lang === 'hindi') {
+            preferredVoice = voices.find(v => v.lang.startsWith('hi')) || voices.find(v => v.lang.includes('IN'));
+          } else if (lang === 'tanglish') {
+            preferredVoice = voices.find(v => v.lang.includes('IN')) || voices.find(v => v.lang.startsWith('ta'));
+          } else {
+            preferredVoice = voices.find(v => v.lang.includes('en-GB') || v.name.includes('George') || v.name.includes('Daniel') || v.name.includes('Natural')) ||
+                             voices.find(v => v.lang.startsWith('en'));
+          }
+
+          if (!preferredVoice && voices.length > 0) preferredVoice = voices[0];
           if (preferredVoice) utterance.voice = preferredVoice;
 
           utterance.onstart = () => {
@@ -5540,6 +5573,12 @@
         if (inputEl) inputEl.value = '';
         JarvisAudio.click();
 
+        const currentLang = detectQueryLanguage(text);
+        if (statusBadge && selectedLang === 'auto') {
+          const badgeText = currentLang === 'tanglish' ? '🇮🇳 TANGLISH' : (currentLang === 'hindi' ? '🇮🇳 HINDI' : '🌐 GLOBAL EN');
+          statusBadge.textContent = badgeText;
+        }
+
         const q = text.toLowerCase();
         let reply = '';
         let speakOut = '';
@@ -5551,25 +5590,55 @@
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         };
 
-        // Query matching with bilingual support (Tanglish + English)
+        // Query matching with bilingual support (Tanglish + English + Hindi)
         if (q.includes('audit') || q.includes('screen') || q.includes('review') || q.includes('check website') || q.includes('conversion') || q.includes('redesign')) {
-          reply = `<strong>✦ SuperNova Astra Live Screen Audit Report:</strong><br><br>
-          ⚡ <strong>1. Conversion Rate Optimization (CRO):</strong> Your primary Call-To-Action (CTA) needs higher contrast with an immediate risk-reversal guarantee (e.g. <em>48-Hour Rapid Delivery</em>).<br><br>
-          ⚡ <strong>2. Modern Spatial Typography:</strong> Upgrading headings to Space Grotesk + JetBrains Mono increases client trust and brand authority by over 40%.<br><br>
-          ⚡ <strong>3. 100/100 Core Web Vitals:</strong> Sub-second LCP ensures zero visitor bounce on mobile.<br><br>
-          💡 <em>Saran A can rebuild this into a world-class high-converting web architecture in 48 hours!</em>`;
-          speakOut = "Audit complete! Improving your hero CTA contrast, typography rhythm, and mobile speed will dramatically boost your client conversions. Saran can redesign this in forty-eight hours.";
+          if (currentLang === 'tanglish') {
+            reply = `<strong>✦ SuperNova Astra Live Screen Audit Report:</strong><br><br>
+            ⚡ <strong>1. Conversion Rate Optimization (CRO):</strong> Hero CTA contrast increase panni immediate 48-Hour Guarantee kudunga.<br><br>
+            ⚡ <strong>2. Typography & Spatial Rhythm:</strong> Space Grotesk + JetBrains Mono use pannina brand authority 40% boost aagum.<br><br>
+            ⚡ <strong>3. 100/100 Core Web Vitals:</strong> Sub-second LCP-oda mobile visitors bounce rate 0% aakkalaam.<br><br>
+            💡 <em>Saran A indha website-ah 48 hours-la world-class high-converting web architecture-ah redesign panni tharuvom!</em>`;
+            speakOut = "Audit complete! Hero CTA contrast increase panni, typography Space Grotesk-ku mathina unga client conversion boost aagum. Saran 48 hours-la redesign panni tharuvaaru.";
+          } else if (currentLang === 'hindi') {
+            reply = `<strong>✦ SuperNova Astra Live Screen Audit Report:</strong><br><br>
+            ⚡ <strong>1. Conversion Rate Optimization (CRO):</strong> Hero CTA button ka contrast badhaiye aur 48-Hour delivery guarantee add kijiye.<br><br>
+            ⚡ <strong>2. Modern Typography:</strong> Space Grotesk typography se brand authority 40% badhegi.<br><br>
+            ⚡ <strong>3. 100/100 Core Web Vitals:</strong> Mobile speed improve karke bounce rate zero kijiye.<br><br>
+            💡 <em>Saran A isey 48 ghante mein high-converting architecture mein redesign kar dega!</em>`;
+            speakOut = "Audit complete! Hero CTA contrast improve kijiye aur typography modern kijiye. Saran 48 ghante mein isey redesign karke dega.";
+          } else {
+            reply = `<strong>✦ SuperNova Astra Live Screen Audit Report:</strong><br><br>
+            ⚡ <strong>1. Conversion Rate Optimization (CRO):</strong> Your primary Call-To-Action (CTA) needs higher contrast with an immediate risk-reversal guarantee (e.g. <em>48-Hour Rapid Delivery</em>).<br><br>
+            ⚡ <strong>2. Modern Spatial Typography:</strong> Upgrading headings to Space Grotesk + JetBrains Mono increases client trust and brand authority by over 40%.<br><br>
+            ⚡ <strong>3. 100/100 Core Web Vitals:</strong> Sub-second LCP ensures zero visitor bounce on mobile.<br><br>
+            💡 <em>Saran A can rebuild this into a world-class high-converting web architecture in 48 hours!</em>`;
+            speakOut = "Audit complete! Improving your hero CTA contrast, typography rhythm, and mobile speed will dramatically boost your client conversions. Saran can redesign this in forty-eight hours.";
+          }
           actions = [
             { label: '📱 WhatsApp Saran A (+91 8072199123)', href: 'https://wa.me/918072199123?text=Hi%20Saran!%20Astra%20audited%20my%20website%20and%20I%20want%20to%20redesign%20it%20with%20SuperNova.', external: true, primary: true },
             { label: '💰 Check ₹9,999 Sprint Package', href: '#pricing', primary: false, action: "document.getElementById('pricing')?.scrollIntoView({behavior: 'smooth'})" }
           ];
         }
-        else if (q.includes('price') || q.includes('cost') || q.includes('package') || q.includes('budget') || q.includes('rate') || q.includes('evlo') || q.includes('vilai') || q.includes('kasu')) {
-          reply = `<strong>SuperNova Studio Pricing Tiers:</strong><br><br>
-          ⚡ <strong>Sprint Funnel — ₹9,999:</strong> High-converting 1-page funnel with 3D elements, delivered in 48 hours.<br>
-          🚀 <strong>Growth Titan — ₹19,999:</strong> Multi-page high-converting business portal with SEO & CMS.<br>
-          👑 <strong>Enterprise Cyber Titan — ₹39,999:</strong> Bespoke WebGL 3D immersive application with custom AI integration.`;
-          speakOut = "Saran offers three core tiers: Sprint Funnel at 9,999 rupees delivered in 48 hours, Growth Titan at 19,999 rupees, and Enterprise Cyber Titan at 39,999 rupees.";
+        else if (q.includes('price') || q.includes('cost') || q.includes('package') || q.includes('budget') || q.includes('rate') || q.includes('evlo') || q.includes('vilai') || q.includes('kasu') || q.includes('kitna') || q.includes('daam')) {
+          if (currentLang === 'tanglish') {
+            reply = `<strong>SuperNova Studio Pricing Tiers:</strong><br><br>
+            ⚡ <strong>Sprint Funnel — ₹9,999:</strong> 1-page high-converting 3D funnel, 48 hours-la delivery.<br>
+            🚀 <strong>Growth Titan — ₹19,999:</strong> Complete business portal with SEO & CMS.<br>
+            👑 <strong>Enterprise Cyber Titan — ₹39,999:</strong> Bespoke WebGL 3D interactive portal with AI integration.`;
+            speakOut = "SuperNova Studio-la 3 core tiers irukku: Sprint Funnel 9,999 rupees 48 hours-la delivery, Growth Titan 19,999 rupees, and Enterprise Titan 39,999 rupees.";
+          } else if (currentLang === 'hindi') {
+            reply = `<strong>SuperNova Studio Pricing Tiers:</strong><br><br>
+            ⚡ <strong>Sprint Funnel — ₹9,999:</strong> 1-page high-converting 3D funnel, 48 ghante mein delivery.<br>
+            🚀 <strong>Growth Titan — ₹19,999:</strong> Complete business portal with SEO.<br>
+            👑 <strong>Enterprise Cyber Titan — ₹39,999:</strong> Bespoke WebGL 3D interactive portal with AI integration.`;
+            speakOut = "SuperNova Studio mein teen packages hain: Sprint Funnel 9,999 rupees 48 ghante mein delivery, Growth Titan 19,999 rupees, aur Enterprise Titan 39,999 rupees.";
+          } else {
+            reply = `<strong>SuperNova Studio Pricing Tiers:</strong><br><br>
+            ⚡ <strong>Sprint Funnel — $149 / ₹9,999:</strong> High-converting 1-page funnel with 3D elements, delivered in 48 hours.<br>
+            🚀 <strong>Growth Titan — $299 / ₹19,999:</strong> Multi-page high-converting business portal with SEO & CMS.<br>
+            👑 <strong>Enterprise Cyber Titan — $499 / ₹39,999:</strong> Bespoke WebGL 3D immersive application with custom AI integration.`;
+            speakOut = "Saran offers three core tiers: Sprint Funnel at 149 dollars delivered in 48 hours, Growth Titan at 299 dollars, and Enterprise Cyber Titan at 499 dollars.";
+          }
           actions = [
             { label: '⚡ Lock ₹9,999 Sprint on WhatsApp', href: 'https://wa.me/918072199123?text=Hi%20Saran!%20I%20want%20to%20lock%20the%20%E2%82%B99,999%20Sprint%20Package%20delivered%20in%2048%20hours.', external: true, primary: true },
             { label: '💰 View All Packages', href: '#pricing', primary: false, action: "document.getElementById('pricing')?.scrollIntoView({behavior: 'smooth'})" }
@@ -5663,7 +5732,7 @@
 
         setTimeout(() => {
           appendMessage('jarvis', reply, actions);
-          speakText(speakOut);
+          speakText(speakOut, currentLang);
         }, 400);
       }
 
@@ -5700,6 +5769,22 @@
       window.closeJarvisHUD = closeHUD;
 
       // 8. Event Listeners Binding
+      if (langSelector) {
+        langSelector.addEventListener('change', (e) => {
+          selectedLang = e.target.value;
+          if (selectedLang === 'tanglish') {
+            appendMessage('jarvis', '🇮🇳 <strong>Tanglish Protocol Active!</strong> Vanakkam! Unga business-ku enna web architecture thevai nu sollunga!');
+            speakText('Tanglish Protocol Active! Unga business-ku enna website thevai nu sollunga!', 'tanglish');
+          } else if (selectedLang === 'hindi') {
+            appendMessage('jarvis', '🇮🇳 <strong>Hindi Protocol Active!</strong> SuperNova Studio mein aapka swagat hai. Batayiye kaisa web project banana hai?');
+            speakText('Hindi Protocol Active! SuperNova Studio mein aapka swagat hai.', 'hindi');
+          } else if (selectedLang === 'en') {
+            appendMessage('jarvis', '🌐 <strong>Global Executive English Active!</strong> Welcome to SuperNova Studio. How may I assist your business or web architecture requirements today?');
+            speakText('Global Executive English Active. How may I assist your business today?', 'en');
+          }
+        });
+      }
+
       if (triggerBtn) {
         triggerBtn.addEventListener('click', (e) => {
           e.preventDefault();
@@ -5840,8 +5925,14 @@
           </div>
         </div>
 
-        <!-- Header Actions: Sound Toggle & Close -->
+        <!-- Header Actions: Language Switcher, Sound Toggle & Close -->
         <div class="flex items-center gap-2">
+          <select id="jarvisLangSelector" class="bg-slate-900 text-cyan-300 border border-slate-700/80 hover:border-cyan-500/50 rounded-lg px-2 py-1 text-[11px] font-mono cursor-pointer focus:outline-none transition" title="Customer Language Adaptation">
+            <option value="auto">🌐 Auto Language</option>
+            <option value="en">🇬🇧 English (Global)</option>
+            <option value="tanglish">🇮🇳 Tanglish (Tamil)</option>
+            <option value="hindi">🇮🇳 Hindi (National)</option>
+          </select>
           <button id="jarvisSoundToggle" type="button" title="Toggle Sound" aria-label="Toggle Sound" class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition cursor-pointer">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M11 5L6 9H2v6h4l5 4V5z"/></svg>
           </button>
