@@ -11,17 +11,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap');
 
     body {
       font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       background-color: #030d1a;
-      color: #f8fafc;
+      color: #ffffff;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     .font-serif-luxury {
       font-family: 'Cinzel', serif;
+      font-weight: 800;
     }
 
     .sothebys-gold {
@@ -29,53 +32,53 @@
     }
 
     .sothebys-gold-gradient {
-      background: linear-gradient(135deg, #f7e7ce 0%, #c5a059 50%, #9e7d3b 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #f7e7ce 20%, #c5a059 60%, #9e7d3b 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .sothebys-navy-card {
-      background: linear-gradient(180deg, rgba(7, 26, 51, 0.85) 0%, rgba(2, 13, 26, 0.95) 100%);
+      background: linear-gradient(180deg, rgba(7, 26, 51, 0.92) 0%, rgba(2, 13, 26, 0.98) 100%);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(197, 160, 89, 0.25);
+      border: 1.5px solid rgba(197, 160, 89, 0.35);
     }
   </style>
 </head>
 <body class="selection:bg-amber-600 selection:text-white">
 
   <!-- Sotheby's Top VIP Bar -->
-  <div class="border-b border-[#c5a059]/20 bg-[#001428] px-6 py-2 text-[11px] tracking-[0.2em] uppercase text-zinc-400">
+  <div class="border-b border-[#c5a059]/30 bg-[#001428] px-6 py-2.5 text-xs tracking-[0.2em] uppercase font-bold text-zinc-300">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <span class="w-2 h-2 rounded-full bg-[#c5a059]"></span>
-        <span>Dubai Sotheby’s International Realty • Private Client Office</span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#c5a059] animate-pulse"></span>
+        <span class="text-white font-extrabold">Dubai Sotheby’s International Realty • Private Client Office</span>
       </div>
-      <div class="flex items-center gap-4 text-xs font-mono">
-        <span>DIFC Gate Village, Building 3, Dubai, UAE</span>
-        <span class="text-[#c5a059]">Official Proposal Concept</span>
+      <div class="flex items-center gap-4 text-xs font-mono font-bold">
+        <span class="text-zinc-300">DIFC Gate Village, Building 3, Dubai, UAE</span>
+        <span class="text-[#c5a059] uppercase font-black">Official Proposal Concept</span>
       </div>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#001428]/90 backdrop-blur-xl border-b border-zinc-800">
+  <header class="sticky top-0 z-50 bg-[#001428]/95 backdrop-blur-xl border-b border-zinc-800">
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
       
       <!-- Sotheby's Logo -->
       <a href="#" class="flex flex-col">
-        <span class="font-serif-luxury font-black text-2xl tracking-[0.25em] text-white">DUBAI SOTHEBY'S</span>
-        <span class="text-[9px] tracking-[0.4em] uppercase text-[#c5a059] font-semibold">INTERNATIONAL REALTY</span>
+        <span class="font-serif-luxury font-black text-2xl sm:text-3xl tracking-[0.22em] text-white">DUBAI SOTHEBY'S</span>
+        <span class="text-[10px] tracking-[0.45em] uppercase text-[#c5a059] font-black mt-0.5">INTERNATIONAL REALTY</span>
       </a>
 
       <!-- Currency Switcher -->
       <div class="flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-1 p-1 rounded-lg bg-black/40 border border-[#c5a059]/30 text-xs font-mono">
-          <button onclick="setCurrency('AED', 3.67)" id="curAED" class="px-2.5 py-1 rounded bg-[#c5a059]/20 text-[#c5a059] font-bold">AED</button>
-          <button onclick="setCurrency('USD', 1.0)" id="curUSD" class="px-2.5 py-1 rounded text-zinc-400 hover:text-white">USD $</button>
-          <button onclick="setCurrency('GBP', 0.79)" id="curGBP" class="px-2.5 py-1 rounded text-zinc-400 hover:text-white">GBP £</button>
+        <div class="hidden sm:flex items-center gap-1.5 p-1.5 rounded-xl bg-black/60 border border-[#c5a059]/40 text-xs font-mono font-bold">
+          <button onclick="setCurrency('AED', 3.67)" id="curAED" class="px-3 py-1.5 rounded-lg bg-[#c5a059] text-black font-black">AED</button>
+          <button onclick="setCurrency('USD', 1.0)" id="curUSD" class="px-3 py-1.5 rounded-lg text-zinc-300 hover:text-white font-black">USD $</button>
+          <button onclick="setCurrency('GBP', 0.79)" id="curGBP" class="px-3 py-1.5 rounded-lg text-zinc-300 hover:text-white font-black">GBP £</button>
         </div>
 
-        <a href="#confidential-inquiry" class="border border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-black font-serif-luxury text-xs tracking-widest uppercase px-6 py-3.5 transition">
+        <a href="#portfolio-calc" class="border-2 border-[#c5a059] text-[#c5a059] hover:bg-[#c5a059] hover:text-black font-serif-luxury text-xs tracking-widest uppercase font-black px-6 py-3.5 transition shadow-lg">
           Client Portal
         </a>
       </div>
@@ -88,61 +91,61 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
       <div class="lg:col-span-7 space-y-8">
-        <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#00204a]/60 border border-[#c5a059]/40 text-[#c5a059] text-xs tracking-wider uppercase font-semibold">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#c5a059] animate-pulse"></span>
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#00204a] border border-[#c5a059] text-[#c5a059] text-xs tracking-wider uppercase font-extrabold shadow-md">
+          <span class="w-2 h-2 rounded-full bg-[#c5a059] animate-ping"></span>
           <span>Bespoke 3D Experience Architecture</span>
         </div>
 
-        <h1 class="font-serif-luxury font-black text-4xl sm:text-6xl text-white tracking-tight leading-[1.1]">
-          The Definitive Standard in <br><span class="sothebys-gold-gradient">Ultra-Prime Dubai Real Estate.</span>
+        <h1 class="font-serif-luxury font-black text-4xl sm:text-6xl lg:text-7xl text-white tracking-tight leading-[1.08]">
+          The Definitive Standard in <br><span class="sothebys-gold-gradient font-black">Ultra-Prime Dubai Real Estate.</span>
         </h1>
 
-        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed max-w-xl font-light">
+        <p class="text-zinc-200 text-base sm:text-lg leading-relaxed max-w-xl font-semibold">
           Engineered exclusively for Dubai Sotheby’s ultra-high-net-worth clientele. Featuring live multi-currency asset valuation, interactive 3D floorplate exploration, and instant encrypted VIP viewing reservations.
         </p>
 
         <!-- Stats -->
-        <div class="grid grid-cols-3 gap-6 pt-4 border-t border-zinc-800">
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t-2 border-zinc-800">
           <div>
-            <div class="font-serif-luxury text-2xl text-[#c5a059] font-bold">AED 45M+</div>
-            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">Average Portfolio Asset</div>
+            <div class="font-serif-luxury text-3xl text-[#c5a059] font-black">AED 45M+</div>
+            <div class="text-xs text-zinc-300 font-extrabold tracking-wider uppercase mt-1">Average Portfolio Asset</div>
           </div>
           <div>
-            <div class="font-serif-luxury text-2xl text-[#c5a059] font-bold">100%</div>
-            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">DLD Escrow Verified</div>
+            <div class="font-serif-luxury text-3xl text-[#c5a059] font-black">100%</div>
+            <div class="text-xs text-zinc-300 font-extrabold tracking-wider uppercase mt-1">DLD Escrow Verified</div>
           </div>
           <div>
-            <div class="font-serif-luxury text-2xl text-[#c5a059] font-bold">60 FPS</div>
-            <div class="text-[11px] text-zinc-400 tracking-wider uppercase mt-1">Liquid 3D Rendering</div>
+            <div class="font-serif-luxury text-3xl text-emerald-400 font-black">60 FPS</div>
+            <div class="text-xs text-zinc-300 font-extrabold tracking-wider uppercase mt-1">Liquid 3D Rendering</div>
           </div>
         </div>
 
-        <div class="pt-2 flex flex-wrap items-center gap-4">
-          <a href="#portfolio-calc" class="bg-[#c5a059] hover:bg-[#d8b46e] text-black font-serif-luxury font-black text-xs tracking-widest uppercase px-8 py-4 transition shadow-2xl flex items-center gap-3">
+        <div class="pt-4 flex flex-wrap items-center gap-4">
+          <a href="#portfolio-calc" class="bg-[#c5a059] hover:bg-[#d8b46e] text-black font-serif-luxury font-black text-xs tracking-widest uppercase px-8 py-4.5 rounded-none transition shadow-2xl flex items-center gap-3">
             <span>Explore Curated Valuation Desk</span>
-            <span>➔</span>
+            <span class="text-base font-black">➔</span>
           </a>
         </div>
       </div>
 
       <!-- Right 3D Architectural Pavilion -->
       <div class="lg:col-span-5">
-        <div class="sothebys-navy-card p-6 relative">
-          <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
-            <span class="font-serif-luxury text-xs tracking-widest text-[#c5a059] uppercase">Interactive 3D Architectural Asset</span>
-            <span class="text-[10px] text-zinc-400 font-mono">360° Inspection</span>
+        <div class="sothebys-navy-card p-6 relative rounded-2xl shadow-2xl">
+          <div class="flex items-center justify-between pb-4 border-b border-zinc-700">
+            <span class="font-serif-luxury text-xs tracking-widest text-[#c5a059] uppercase font-black">Interactive 3D Architectural Asset</span>
+            <span class="text-xs text-zinc-300 font-mono font-bold">360° Inspection</span>
           </div>
 
-          <div class="w-full h-96 relative mt-4 bg-[#001020] overflow-hidden">
+          <div class="w-full h-96 relative mt-4 bg-[#001020] rounded-xl overflow-hidden border border-zinc-800">
             <canvas id="sothebysCanvas" class="w-full h-full cursor-grab active:cursor-grabbing"></canvas>
-            <div class="absolute bottom-3 left-3 bg-black/80 px-3 py-1 text-[10px] font-mono text-[#c5a059] border border-[#c5a059]/30">
+            <div class="absolute bottom-3 left-3 bg-black/90 px-3.5 py-1.5 text-xs font-mono font-bold text-[#c5a059] border border-[#c5a059]/40">
               Palm Jumeirah Signature Villa Locus
             </div>
           </div>
 
-          <div class="mt-4 pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
-            <span>Prepared for: <strong>Dubai Sotheby’s Realty</strong></span>
-            <span class="text-[#c5a059] font-mono">Concept v1.0</span>
+          <div class="mt-4 pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-300 font-bold">
+            <span>Prepared for: <strong class="text-white font-black">Dubai Sotheby’s Realty</strong></span>
+            <span class="text-[#c5a059] font-mono font-black">Concept v1.0</span>
           </div>
         </div>
       </div>
@@ -152,35 +155,35 @@
 
   <!-- Interactive Asset Valuation Desk -->
   <section id="portfolio-calc" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="sothebys-navy-card p-8 sm:p-12">
+    <div class="sothebys-navy-card p-8 sm:p-12 rounded-2xl">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <div class="lg:col-span-5 space-y-4">
-          <span class="text-xs font-serif-luxury tracking-widest text-[#c5a059] uppercase">Interactive Buyer Module</span>
-          <h2 class="font-serif-luxury font-bold text-3xl sm:text-4xl text-white">Private Portfolio Valuation</h2>
-          <p class="text-zinc-300 text-sm leading-relaxed font-light">
+          <span class="text-xs font-serif-luxury tracking-widest text-[#c5a059] uppercase font-black">Interactive Buyer Module</span>
+          <h2 class="font-serif-luxury font-black text-3xl sm:text-4xl text-white">Private Portfolio Valuation</h2>
+          <p class="text-zinc-200 text-sm leading-relaxed font-semibold">
             International buyers can instantly review capital allocation in AED, USD, or GBP with automated 20% DLD escrow calculations.
           </p>
         </div>
 
-        <div class="lg:col-span-7 bg-[#001428] p-8 border border-[#c5a059]/30 space-y-6">
+        <div class="lg:col-span-7 bg-[#001428] p-8 border-2 border-[#c5a059]/40 rounded-xl space-y-6">
           <div>
-            <label class="block text-xs font-serif-luxury tracking-wider text-[#c5a059] uppercase mb-2">Select Luxury Asset Tier</label>
-            <select id="sothebysTier" onchange="calcSothebysVal()" class="w-full bg-black border border-zinc-700 p-3.5 text-sm font-serif-luxury text-white focus:outline-none focus:border-[#c5a059] cursor-pointer">
+            <label class="block text-xs font-serif-luxury tracking-wider text-[#c5a059] uppercase font-black mb-2">Select Luxury Asset Tier</label>
+            <select id="sothebysTier" onchange="calcSothebysVal()" class="w-full bg-black border-2 border-zinc-700 p-4 text-sm font-serif-luxury font-bold text-white focus:outline-none focus:border-[#c5a059] cursor-pointer">
               <option value="18500000">Palm Jumeirah Custom Beachfront Villa (AED 18,500,000)</option>
               <option value="35000000" selected>Downtown Dubai Sky Palace Penthouse (AED 35,000,000)</option>
               <option value="72000000">Emirates Hills Mega-Mansion Estate (AED 72,000,000)</option>
             </select>
           </div>
 
-          <div class="p-6 bg-black/60 border border-[#c5a059]/40 flex flex-wrap items-center justify-between gap-6">
+          <div class="p-6 bg-black/80 border-2 border-[#c5a059]/50 flex flex-wrap items-center justify-between gap-6">
             <div>
-              <span class="text-[11px] text-zinc-400 tracking-widest uppercase block font-serif-luxury">Portfolio Listing Price</span>
-              <span id="sothebysPrice" class="font-serif-luxury font-black text-3xl sothebys-gold-gradient">AED 35,000,000</span>
+              <span class="text-xs text-zinc-300 tracking-widest uppercase block font-serif-luxury font-black">Portfolio Listing Price</span>
+              <span id="sothebysPrice" class="font-serif-luxury font-black text-3xl sm:text-4xl sothebys-gold-gradient">AED 35,000,000</span>
             </div>
             <div class="text-right">
-              <span class="text-[11px] text-[#c5a059] tracking-widest uppercase block font-serif-luxury">20% Escrow Allocation</span>
-              <span id="sothebysEscrow" class="font-mono font-bold text-2xl text-white">AED 7,000,000</span>
+              <span class="text-xs text-[#c5a059] tracking-widest uppercase block font-serif-luxury font-black">20% Escrow Allocation</span>
+              <span id="sothebysEscrow" class="font-mono font-black text-2xl sm:text-3xl text-white">AED 7,000,000</span>
             </div>
           </div>
         </div>
@@ -191,12 +194,12 @@
 
   <!-- Footer -->
   <footer class="border-t border-zinc-800 bg-[#001020] py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6 text-xs text-zinc-500">
+    <div class="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-6 text-xs font-bold text-zinc-400">
       <div>
-        <span class="font-serif-luxury tracking-widest text-zinc-400">Concept Architecture for Dubai Sotheby’s International Realty.</span>
+        <span class="font-serif-luxury tracking-widest text-zinc-300 font-bold">© 2026 Dubai Sotheby’s International Realty Concept Architecture.</span>
       </div>
-      <div class="font-mono text-[11px]">
-        Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-[#c5a059] font-bold hover:underline">SuperNova Studio</a>
+      <div class="font-mono text-xs">
+        Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-[#c5a059] font-black hover:underline">SuperNova Studio</a>
       </div>
     </div>
   </footer>
@@ -210,9 +213,9 @@
       ['curAED', 'curUSD', 'curGBP'].forEach(id => {
         const btn = document.getElementById(id);
         if (id === 'cur' + cur) {
-          btn.className = "px-2.5 py-1 rounded bg-[#c5a059]/20 text-[#c5a059] font-bold";
+          btn.className = "px-3 py-1.5 rounded-lg bg-[#c5a059] text-black font-black";
         } else {
-          btn.className = "px-2.5 py-1 rounded text-zinc-400 hover:text-white";
+          btn.className = "px-3 py-1.5 rounded-lg text-zinc-300 hover:text-white font-black";
         }
       });
       curSym = cur === 'AED' ? 'AED ' : cur === 'USD' ? '$' : '£';
@@ -253,7 +256,6 @@
 
       const group = new THREE.Group();
 
-      // Elegant architectural pavilion
       const tiers = 5;
       for (let i = 0; i < tiers; i++) {
         const rad = 1.4 - (i * 0.22);
