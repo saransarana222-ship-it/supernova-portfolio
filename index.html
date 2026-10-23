@@ -2071,28 +2071,60 @@
           <h3 class="landing-target font-display text-xl sm:text-2xl font-bold text-white text-center mb-1 cursor-pointer" data-station="DISPATCH: READY TO SCALE">Ready to Outclass Your Competitors?</h3>
           <p class="text-xs text-slate-400 text-center mb-4">Direct private communication with Saran A. Quick reply guaranteed.</p>
 
-          <!-- Direct Phone & Email Badges -->
-          <div class="grid grid-cols-2 gap-3 mb-4">
+          <!-- Direct Phone & Email Badges with Call Schedule Info -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
             <a href="https://wa.me/918072199123" target="_blank" class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 text-center transition">
-              <div class="text-xs text-slate-400">WhatsApp / Call</div>
+              <div class="text-[10px] uppercase font-mono tracking-wider text-slate-400">Direct WhatsApp (24/7 Active)</div>
               <div class="text-xs font-bold text-emerald-400">+91 8072199123</div>
             </a>
-            <a href="mailto:saransaran.a222@gmail.com" class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 text-center transition">
-              <div class="text-xs text-slate-400">Direct Email</div>
-              <div class="text-xs font-bold text-cyan-400">saransaran.a222@gmail.com</div>
-            </a>
+            <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 text-center">
+              <div class="text-[10px] uppercase font-mono tracking-wider text-slate-400">📞 Live 1-on-1 Call Hours</div>
+              <div class="text-xs font-bold text-cyan-300">Mon–Fri: After 6 PM • Weekends: Full Day</div>
+            </div>
+          </div>
+
+          <!-- Official Call & Meeting Availability Banner -->
+          <div class="mb-4 p-3.5 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 text-left space-y-1.5 text-[11px] font-sans">
+            <div class="flex items-center gap-2 font-bold text-white">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Founder Consultation Schedule Protocol:</span>
+            </div>
+            <div class="text-slate-300 grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              <div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <span class="text-cyan-400 font-bold block mb-0.5">🌙 Weekdays (Mon–Fri):</span>
+                <p class="text-[10.5px] text-slate-400 leading-relaxed">Direct calls strictly from <strong class="text-white font-semibold">6:00 PM – 10:00 PM</strong> (Daytime dedicated to academic research & engineering). Morning slots before 7:30 AM available upon prior request.</p>
+              </div>
+              <div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800">
+                <span class="text-emerald-400 font-bold block mb-0.5">🚀 Weekends (Sat & Sun):</span>
+                <p class="text-[10.5px] text-slate-400 leading-relaxed"><strong class="text-white font-semibold">Full-Day Active (9 AM – 9 PM)</strong> for deep-dive Google Meet strategy sessions & rapid 48h deliveries.</p>
+              </div>
+            </div>
           </div>
 
           <form id="clientPitchForm" class="space-y-3">
             <input type="text" id="pName" required placeholder="Your Name or Company" class="w-full bg-slate-900/70 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400 backdrop-blur-sm">
             <input type="text" id="pContact" required placeholder="Your WhatsApp Number or Email" class="w-full bg-slate-900/70 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400 backdrop-blur-sm">
+            
+            <!-- Call Time Slot Selector -->
+            <div>
+              <label for="pSlot" class="block text-[10px] font-mono uppercase text-slate-400 mb-1 font-bold">Select Preferred Consultation / Call Slot:</label>
+              <select id="pSlot" class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-cyan-300 focus:outline-none focus:border-cyan-400 backdrop-blur-sm cursor-pointer">
+                <option value="Weekday Evening (6:00 PM - 7:30 PM)">🌙 Weekday Evening (6:00 PM – 7:30 PM)</option>
+                <option value="Weekday Night (7:30 PM - 10:00 PM)">🌙 Weekday Night (7:30 PM – 10:00 PM)</option>
+                <option value="Early Morning (6:30 AM - 7:30 AM)">🌅 Early Morning (6:30 AM – 7:30 AM)</option>
+                <option value="Saturday Weekend (Anytime 9 AM - 9 PM)">🚀 Saturday Weekend (Full-Day Available)</option>
+                <option value="Sunday Weekend (Anytime 9 AM - 9 PM)">🚀 Sunday Weekend (Full-Day Available)</option>
+                <option value="Quick WhatsApp Chat Only">💬 Quick WhatsApp Chat (Anytime 24/7)</option>
+              </select>
+            </div>
+
             <textarea id="pDetails" rows="2" placeholder="Tell me what you want to build or improve..." class="w-full bg-slate-900/70 border border-slate-700/80 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-cyan-400 backdrop-blur-sm"></textarea>
             
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-slate-950 font-black text-xs uppercase tracking-wider hover:opacity-95 shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
-              <span>Send Direct Inquiry to Saran's WhatsApp ➔</span>
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-slate-950 font-black text-xs uppercase tracking-wider hover:opacity-95 shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 cursor-pointer">
+              <span>Book Call Slot & Send to Saran's WhatsApp ➔</span>
             </button>
             <div id="pitchSuccess" class="hidden text-xs text-emerald-400 text-center font-bold pt-1">
-              ✓ Redirecting directly to Saran A's WhatsApp...
+              ✓ Call slot requested! Opening Saran A's WhatsApp...
             </div>
           </form>
         </div>
@@ -3300,6 +3332,7 @@
       e.preventDefault();
       const name = document.getElementById('pName').value;
       const contact = document.getElementById('pContact').value;
+      const slot = document.getElementById('pSlot') ? document.getElementById('pSlot').value : 'Flexible';
       const details = document.getElementById('pDetails').value;
       
       const s = document.getElementById('pitchSuccess');
@@ -3307,10 +3340,10 @@
 
       // Save lead locally
       const stored = JSON.parse(localStorage.getItem('supernova_leads') || '[]');
-      stored.unshift({ name, contact, details, date: new Date().toLocaleString() });
+      stored.unshift({ name, contact, slot, details, date: new Date().toLocaleString() });
       localStorage.setItem('supernova_leads', JSON.stringify(stored));
 
-      const waMsg = `Hi Saran! My name is ${encodeURIComponent(name)} (${encodeURIComponent(contact)}). I am interested in building a website with SuperNova Studio. Brief: ${encodeURIComponent(details)}`;
+      const waMsg = `Hi Saran! My name is ${encodeURIComponent(name)} (${encodeURIComponent(contact)}). Preferred Call Slot: [${encodeURIComponent(slot)}]. Project Brief: ${encodeURIComponent(details)}`;
       const waUrl = `https://wa.me/918072199123?text=${waMsg}`;
 
       setTimeout(() => {
@@ -5718,14 +5751,19 @@
           ];
           scrollToSec('academicProfile');
         }
-        else if (q.includes('contact') || q.includes('call') || q.includes('phone') || q.includes('number') || q.includes('reach') || q.includes('email') || q.includes('pesanum') || q.includes('whatsapp')) {
-          reply = `You can connect with Saran A directly through secure priority channels:<br><br>
-          📞 <strong>Direct Call:</strong> <a href="tel:+918072199123" class="text-cyan-400 font-bold underline">+91 80721 99123</a><br>
-          💬 <strong>Instant WhatsApp:</strong> Active 24/7 for project inquiries & instant scope lock-in.`;
-          speakOut = "You can reach Saran directly on WhatsApp or call at plus nine one, 80721 99123. He is available 24/7 for project inquiries.";
+        else if (q.includes('contact') || q.includes('call') || q.includes('phone') || q.includes('number') || q.includes('reach') || q.includes('email') || q.includes('pesanum') || q.includes('whatsapp') || q.includes('schedule') || q.includes('timing') || q.includes('slot') || q.includes('available')) {
+          reply = `<strong>Official Founder Call & Strategy Schedule:</strong><br><br>
+          🎓 <em>Founder Saran A is in academic & engineering sessions during daytime.</em><br><br>
+          📞 <strong>Live Call / Google Meet Availability:</strong><br>
+          🌙 <strong>Weekdays (Mon–Fri):</strong> Strictly <strong class="text-cyan-300">6:00 PM – 10:00 PM</strong> (Morning before 7:30 AM upon prior request)<br>
+          🚀 <strong>Weekends (Sat & Sun):</strong> <strong class="text-emerald-300">Full-Day Active (9:00 AM – 9:00 PM)</strong><br>
+          💬 <strong>Direct WhatsApp:</strong> Active 24/7 for instant inquiries & slot locks!`;
+          speakOut = currentLang === 'tanglish' 
+            ? "Saran daytime-la college sessions-la irupparu boss. Direct strategy calls weekdays evening 6 PM to 10 PM, and weekends-la full-day anytime book pannalam. WhatsApp 24/7 active!"
+            : "Founder Saran is available for direct calls on weekdays after 6:00 PM, and full-time on weekends. WhatsApp is active 24/7.";
           actions = [
-            { label: '📞 Call Now (+91 80721 99123)', href: 'tel:+918072199123', primary: true },
-            { label: '💬 Open WhatsApp', href: 'https://wa.me/918072199123?text=Hi%20Saran,%20I%20would%20like%20to%20discuss%20a%20new%20project!', external: true, primary: false }
+            { label: '📅 Reserve Call Slot (After 6 PM)', href: '#bookingSection', primary: true, action: "document.getElementById('bookingSection')?.scrollIntoView({behavior: 'smooth'})" },
+            { label: '💬 WhatsApp Saran (24/7 Active)', href: 'https://wa.me/918072199123?text=Hi%20Saran,%20booking%20a%20call%20slot%20(after%206%20PM%20or%20weekend)%20for%20my%20project', external: true, primary: false }
           ];
         }
         else if (q.includes('tech') || q.includes('stack') || q.includes('framework') || q.includes('tool') || q.includes('system')) {
