@@ -18,6 +18,30 @@
         "destination": "/certificate.html"
       },
       {
+        "source": "/clients/mathan-dental",
+        "destination": "/clients/mathan-dental/index.html"
+      },
+      {
+        "source": "/clients/mathan-dental/**",
+        "destination": "/clients/mathan-dental/index.html"
+      },
+      {
+        "source": "/clients/malibu-luxury",
+        "destination": "/clients/malibu-luxury/index.html"
+      },
+      {
+        "source": "/clients/malibu-luxury/**",
+        "destination": "/clients/malibu-luxury/index.html"
+      },
+      {
+        "source": "/clients/star-builders",
+        "destination": "/clients/star-builders/index.html"
+      },
+      {
+        "source": "/clients/star-builders/**",
+        "destination": "/clients/star-builders/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

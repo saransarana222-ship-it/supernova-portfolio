@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malibu Luxury Estates | Premium LUXURY ESTATES, VILLAS & COMMERCIAL ARCHITECTURE in Dubai</title>
+  
+  <meta name="description" content="Malibu Luxury Estates — Architectural Landmarks Engineered for Generations in Dubai. WhatsApp direct booking: +971521908847">
+  <meta name="theme-color" content="#030712">
+
+  <!-- Tailwind CSS & Three.js -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@700;800;900&family=JetBrains+Mono:wght@600;700&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+      background-color: #030712;
+      color: #f8fafc;
+    }
+    body {
+      background-color: #030712;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: clip;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.18) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.16) 0px, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="relative min-h-screen text-slate-100">
+
+  <!-- Top Floating Nav -->
+  <header class="relative z-20 max-w-5xl mx-auto px-4 pt-4 sm:pt-6">
+    <div class="px-5 py-3.5 rounded-2xl border border-cyan-500/25 flex items-center justify-between gap-3 bg-slate-950/70 backdrop-blur-xl shadow-xl">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-orange-500 to-indigo-600 p-[1.5px] shadow-lg flex-shrink-0">
+          <div class="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center font-bold text-white text-lg">
+            ✦
+          </div>
+        </div>
+        <div>
+          <span class="font-display font-black text-lg tracking-wider text-white">Malibu Luxury Estates</span>
+          <span class="block text-[11px] text-slate-400 font-mono">DUBAI • APPOINTMENT & INQUIRIES</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/971521908847?text=Hello%20Malibu%20Luxury%20Estates,%20I%20would%20like%20to%20book%20an%20appointment/inquiry!" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-mono font-black transition shadow-lg shadow-emerald-500/30">
+          <span>💬 Book WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Interactive 3D Arena -->
+  <main class="relative z-10 max-w-5xl mx-auto px-4 py-12 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-[11px] font-mono text-amber-400 mb-6 shadow-md">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>LUXURY ESTATES, VILLAS & COMMERCIAL ARCHITECTURE</span>
+    </div>
+
+    <h1 class="font-display font-black text-4xl sm:text-6xl tracking-tight max-w-3xl mx-auto leading-none mb-6">
+      Architectural Landmarks Engineered for Generations
+    </h1>
+
+    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 font-medium leading-relaxed">
+      Exclusive residential developments and premium commercial properties in prime Dubai locations. Schedule private site visits directly on WhatsApp.
+    </p>
+
+    <!-- Direct Action Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+      <a href="https://wa.me/971521908847?text=Hi%20Malibu%20Luxury%20Estates,%20I%20want%20to%20schedule%20a%20priority%20consultation" target="_blank" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-indigo-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition">
+        Book Appointment on WhatsApp ➔
+      </a>
+      <a href="tel:971521908847" class="px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-white font-bold text-xs font-mono transition">
+        📞 Call Direct: +971521908847
+      </a>
+    </div>
+
+    <!-- 3D Interactive Viewport -->
+    <div class="relative w-full max-w-2xl mx-auto h-[320px] rounded-3xl bg-slate-950/80 border border-slate-800 shadow-2xl overflow-hidden mb-16 flex items-center justify-center">
+      <canvas id="threeArena" class="w-full h-full"></canvas>
+      <div class="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-[10px] font-mono text-cyan-300 pointer-events-none">
+        ✦ INTERACTIVE 3D PERSPECTIVE: DRAG TO ROTATE
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-16">
+      
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">45+ Projects</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-1">Delivered On-Time</div>
+        </div>
+      
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">100%</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-1">Approved DTCP & RERA Plans</div>
+        </div>
+      
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">4.9 ★</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-1">Investor Satisfaction</div>
+        </div>
+      
+        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+          <div class="font-display font-black text-2xl sm:text-3xl text-amber-400">24/7</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-1">VIP Concierge Access</div>
+        </div>
+      
+    </div>
+
+    <!-- Specialized Services Grid -->
+    <div class="text-left mb-16">
+      <h2 class="font-display font-black text-2xl sm:text-3xl text-white mb-6 text-center">Featured Specializations</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        
+          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
+            <div class="text-3xl mb-3">🏡</div>
+            <h3 class="font-bold text-lg text-white mb-1">Custom Luxury Villas</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">Turnkey architectural marvels with smart home automation and sustainable design.</p>
+            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Custom%20Luxury%20Villas" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
+          </div>
+        
+          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
+            <div class="text-3xl mb-3">📐</div>
+            <h3 class="font-bold text-lg text-white mb-1">Premium Residential Plots</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">Gated community layouts with wide blacktop roads and underground utilities.</p>
+            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Premium%20Residential%20Plots" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
+          </div>
+        
+          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
+            <div class="text-3xl mb-3">🏢</div>
+            <h3 class="font-bold text-lg text-white mb-1">Commercial Complexes</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">High-yield commercial spaces designed for maximum rental returns.</p>
+            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Commercial%20Complexes" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
+          </div>
+        
+          <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 transition">
+            <div class="text-3xl mb-3">🏗️</div>
+            <h3 class="font-bold text-lg text-white mb-1">Turnkey Construction</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">End-to-end structural execution with strict quality compliance guarantees.</p>
+            <a href="https://wa.me/971521908847?text=Hello,%20I%20am%20inquiring%20about%20Turnkey%20Construction" target="_blank" class="text-xs font-mono font-bold text-amber-400 hover:underline">Inquire on WhatsApp ➔</a>
+          </div>
+        
+      </div>
+    </div>
+
+    <!-- Quick Direct Booking Box -->
+    <div class="p-8 rounded-3xl bg-slate-950/70 border border-cyan-500/30 text-left max-w-xl mx-auto shadow-2xl">
+      <h3 class="font-display font-black text-2xl text-white mb-2 text-center">Fast-Track Your Appointment</h3>
+      <p class="text-xs text-slate-400 text-center mb-6">Skip reception waiting lines. Connect directly with our priority desk.</p>
+      
+      <form onsubmit="handleLeadSubmit(event)" class="space-y-3">
+        <input type="text" id="custName" required placeholder="Your Full Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
+        <input type="tel" id="custPhone" required placeholder="Your Mobile Number" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
+        <select id="custService" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-cyan-300 focus:outline-none focus:border-cyan-400 cursor-pointer">
+          <option value="Custom Luxury Villas">Custom Luxury Villas</option><option value="Premium Residential Plots">Premium Residential Plots</option><option value="Commercial Complexes">Commercial Complexes</option><option value="Turnkey Construction">Turnkey Construction</option>
+        </select>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-indigo-600 text-slate-950 font-black text-xs uppercase tracking-wider shadow-lg">
+          Confirm Appointment on WhatsApp ➔
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 max-w-5xl mx-auto px-4 py-8 text-center text-xs text-slate-500 border-t border-slate-900 mt-16">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <span>© 2026 Malibu Luxury Estates. All Rights Reserved.</span>
+      <span class="font-mono text-[11px]">Architected by <a href="https://supernova-saran.web.app" target="_blank" class="text-cyan-400 font-bold hover:underline">SuperNova Studio</a></span>
+    </div>
+  </footer>
+
+  <!-- 3D Interactive Script -->
+  <script>
+    (function init3D() {
+      const canvas = document.getElementById('threeArena');
+      if (!canvas || typeof THREE === 'undefined') return;
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+      camera.position.z = 4.5;
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0x06b6d4, 2.5);
+      dirLight.position.set(5, 5, 5);
+      scene.add(dirLight);
+
+      const group = new THREE.Group();
+
+      // Niche-tailored 3D geometric centerpiece
+      const geom = new THREE.TorusKnotGeometry(1, 0.32, 128, 32);
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x06b6d4,
+        roughness: 0.15,
+        metalness: 0.85,
+        wireframe: false
+      });
+      const mesh = new THREE.Mesh(geom, mat);
+      group.add(mesh);
+
+      const wireGeom = new THREE.IcosahedronGeometry(1.6, 2);
+      const wireMat = new THREE.MeshBasicMaterial({ color: 0x6366f1, wireframe: true, transparent: true, opacity: 0.25 });
+      const wireMesh = new THREE.Mesh(wireGeom, wireMat);
+      group.add(wireMesh);
+
+      scene.add(group);
+
+      let isDragging = false;
+      let prevMouseX = 0;
+      let rotVelY = 0.005;
+
+      canvas.addEventListener('mousedown', (e) => { isDragging = true; prevMouseX = e.clientX; });
+      window.addEventListener('mouseup', () => { isDragging = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - prevMouseX;
+        group.rotation.y += deltaX * 0.01;
+        prevMouseX = e.clientX;
+      });
+
+      function animate() {
+        requestAnimationFrame(animate);
+        if (!isDragging) group.rotation.y += rotVelY;
+        group.rotation.x += 0.002;
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!canvas) return;
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      });
+    })();
+
+    function handleLeadSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const srv = document.getElementById('custService').value;
+      const msg = `Hello ${encodeURIComponent('Malibu Luxury Estates')}! My name is ${encodeURIComponent(name)} (${encodeURIComponent(phone)}). I would like to book a priority appointment for: ${encodeURIComponent(srv)}.`;
+      window.open(`https://wa.me/971521908847?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>
