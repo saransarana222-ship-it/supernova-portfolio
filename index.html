@@ -5457,7 +5457,7 @@
         if (!isSpeaking) setWaveActive(false);
       }
 
-      // 4. Web Speech Synthesis (Adaptive Voice)
+      // 4. Web Speech Synthesis (Option 1: Classic British J.A.R.V.I.S. + Adaptive Customer Tone)
       function speakText(text, lang = 'en') {
         if (!('speechSynthesis' in window) || !JarvisAudio.soundEnabled) return;
         try {
@@ -5468,22 +5468,32 @@
                                 .replace(/[*_#`]/g, '');
 
           const utterance = new SpeechSynthesisUtterance(cleanText);
-          utterance.rate = 1.05;
-          utterance.pitch = 0.95;
-
           const voices = window.speechSynthesis.getVoices();
           let preferredVoice = null;
 
-          if (lang === 'hindi') {
-            preferredVoice = voices.find(v => v.lang.startsWith('hi')) || voices.find(v => v.lang.includes('IN'));
-          } else if (lang === 'tanglish') {
-            preferredVoice = voices.find(v => v.lang.includes('IN')) || voices.find(v => v.lang.startsWith('ta'));
-          } else {
-            preferredVoice = voices.find(v => v.lang.includes('en-GB') || v.name.includes('George') || v.name.includes('Daniel') || v.name.includes('Natural')) ||
+          if (lang === 'tanglish') {
+            utterance.lang = 'en-IN';
+            utterance.rate = 1.05;
+            utterance.pitch = 0.95;
+            preferredVoice = voices.find(v => v.lang.includes('IN') || v.lang.startsWith('ta') || v.name.includes('India') || v.name.includes('Ravi')) ||
                              voices.find(v => v.lang.startsWith('en'));
+          } else if (lang === 'hindi') {
+            utterance.lang = 'hi-IN';
+            utterance.rate = 1.02;
+            utterance.pitch = 0.95;
+            preferredVoice = voices.find(v => v.lang.startsWith('hi') || v.lang.includes('IN')) || voices[0];
+          } else {
+            // Option 1: Classic Iron Man British J.A.R.V.I.S. (Deep, calm, elegant British cadence)
+            utterance.lang = 'en-GB';
+            utterance.rate = 0.98; // Calm intellectual British cadence
+            utterance.pitch = 0.88; // Deeper baritone resonance (Paul Bettany J.A.R.V.I.S. style)
+            preferredVoice = voices.find(v => v.lang.includes('en-GB') && (v.name.includes('George') || v.name.includes('Male') || v.name.includes('Oliver') || v.name.includes('Daniel'))) ||
+                             voices.find(v => v.lang.includes('en-GB')) ||
+                             voices.find(v => v.name.includes('Natural') || v.name.includes('David') || v.name.includes('Guy')) ||
+                             voices.find(v => v.lang.startsWith('en')) ||
+                             voices[0];
           }
 
-          if (!preferredVoice && voices.length > 0) preferredVoice = voices[0];
           if (preferredVoice) utterance.voice = preferredVoice;
 
           utterance.onstart = () => {
