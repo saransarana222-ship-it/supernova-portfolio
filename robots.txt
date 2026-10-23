@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://supernova-saran.web.app/sitemap.xml
