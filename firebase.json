@@ -26,6 +26,10 @@
         "destination": "/certificate.html"
       },
       {
+        "source": "/invoices/sothebys",
+        "destination": "/invoices/invoice-sothebys-001.html"
+      },
+      {
         "source": "/clients/sothebys-dubai",
         "destination": "/clients/sothebys-dubai/index.html"
       },
