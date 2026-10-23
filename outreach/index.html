@@ -127,17 +127,13 @@
     let leadsData = [];
 
     async function loadLeads() {
-      const stored = localStorage.getItem('supernova_leads');
-      if (stored) {
-        leadsData = JSON.parse(stored);
-      } else {
-        try {
-          const res = await fetch('./leads.json');
-          leadsData = await res.json();
-          localStorage.setItem('supernova_leads', JSON.stringify(leadsData));
-        } catch (e) {
-          leadsData = [];
-        }
+      try {
+        const res = await fetch('./leads.json?v=' + Date.now());
+        leadsData = await res.json();
+        localStorage.setItem('supernova_leads', JSON.stringify(leadsData));
+      } catch (e) {
+        const stored = localStorage.getItem('supernova_leads');
+        if (stored) leadsData = JSON.parse(stored);
       }
       renderLeads('all');
     }
