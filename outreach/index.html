@@ -42,8 +42,39 @@
       </div>
     </div>
 
+    <!-- Live Instant 1-Click WhatsApp Dispatcher Section -->
+    <div class="mt-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-2 border-emerald-500/40 shadow-2xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+            ⚡ Instant 1-Click WhatsApp Dispatcher
+          </span>
+          <h2 class="text-xl sm:text-2xl font-black text-white mt-2">Send 3D Demo Pitch to Any Real WhatsApp Number</h2>
+          <p class="text-xs text-slate-400 mt-1">Enter any real client number below (with country code like 91... or 971... or 1...) to launch pre-filled WhatsApp!</p>
+        </div>
+
+        <!-- Quick Test on Own Mobile -->
+        <button onclick="testOnOwnPhone()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-emerald-500/30 text-emerald-300 font-bold text-xs flex items-center gap-2 transition">
+          <span>📱 Test on My Number (+91 94431 52643)</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-2">
+        <input type="text" id="quickName" placeholder="Client Name (e.g. Dr. Ramesh or Mr. Tariq)" class="sm:col-span-3 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400">
+        <input type="tel" id="quickPhone" placeholder="Real WhatsApp No (e.g. 919443152643)" class="sm:col-span-3 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-emerald-400">
+        <select id="quickNiche" class="sm:col-span-3 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-emerald-300 focus:outline-none focus:border-emerald-400 cursor-pointer">
+          <option value="dubai">🇦🇪 Dubai Luxury Real Estate ($3,500)</option>
+          <option value="dental">🇺🇸 Dental & Aesthetic Clinic ($2,200)</option>
+          <option value="general">💼 General Modern Business</option>
+        </select>
+        <button onclick="dispatchQuickWhatsApp()" class="sm:col-span-3 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/30 transition">
+          <span>Launch WhatsApp ➔</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Filters & Action Bar -->
-    <div class="flex flex-wrap items-center justify-between gap-4 mt-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 mt-8">
       <div class="flex items-center gap-2">
         <button onclick="filterLeads('all')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 transition" data-filter="all">All Niches</button>
         <button onclick="filterLeads('Dubai Luxury Real Estate')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition" data-filter="Dubai Luxury Real Estate">🇦🇪 Dubai Real Estate</button>
@@ -62,7 +93,7 @@
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 bg-emerald-500 text-slate-950 font-bold text-xs px-5 py-3 rounded-xl shadow-2xl transition-all transform translate-y-24 opacity-0 flex items-center gap-2">
+  <div id="toast" class="fixed bottom-6 right-6 bg-emerald-500 text-slate-950 font-bold text-xs px-5 py-3 rounded-xl shadow-2xl transition-all transform translate-y-24 opacity-0 flex items-center gap-2 z-50">
     <span>✓</span>
     <span id="toastMsg">Action Successful!</span>
   </div>
@@ -81,7 +112,7 @@
           <option value="USA Aesthetic & Dental Clinics">USA Aesthetic & Dental Clinics</option>
           <option value="Luxury Hospitality">Luxury Hospitality</option>
         </select>
-        <input type="tel" id="mPhone" required placeholder="WhatsApp Phone (+971... or +1...)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white">
+        <input type="tel" id="mPhone" required placeholder="Real WhatsApp Phone (with country code)" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white">
         <input type="email" id="mEmail" placeholder="Email Address" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white">
         
         <div class="flex items-center gap-3 pt-3">
@@ -134,7 +165,8 @@
           ? `Hi ${lead.contactPerson}, loved your luxury listings at ${lead.name}! We built a 3D interactive Penthouse portal with live currency & VIP desk for brokers: ${demoLink} — would love to tailor one for your brand. Best, Saran A (SuperNova Studio).`
           : `Hi ${lead.contactPerson}, impressed by ${lead.name}! We built an interactive Swiss-aesthetic dental platform with a live Before & After Smile Slider & 3D anatomy: ${demoLink} — would love to deploy one for your clinic! Best, Saran A.`;
 
-        const waUrl = `https://wa.me/${lead.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(pitchText)}`;
+        const cleanPhone = lead.phone.replace(/[^0-9]/g, '');
+        const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(pitchText)}`;
         const mailUrl = `mailto:${lead.email}?subject=${encodeURIComponent('Interactive 3D Experience for ' + lead.name)}&body=${encodeURIComponent(pitchText)}`;
 
         card.innerHTML = `
@@ -148,7 +180,7 @@
 
             <h3 class="font-bold text-lg text-white mb-1">${lead.name}</h3>
             <p class="text-xs text-slate-400 mb-1">Contact: <strong class="text-slate-200">${lead.contactPerson}</strong></p>
-            <p class="text-xs text-slate-500 mb-4">${lead.location}</p>
+            <p class="text-xs text-slate-500 mb-3">${lead.location}</p>
 
             <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800/80 mb-4 text-[11px] text-slate-400 font-mono line-clamp-3">
               ${pitchText}
@@ -185,6 +217,35 @@
         }
       });
       renderLeads(niche);
+    }
+
+    function testOnOwnPhone() {
+      const demoLink = 'https://supernova-saran.web.app/clients/malibu-luxury';
+      const msg = `Hi Saran, this is a test dispatch from SuperNova Studio Outreach Engine! Check out our live 3D Dubai Penthouse demo: ${demoLink}`;
+      window.open(`https://wa.me/919443152643?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function dispatchQuickWhatsApp() {
+      const name = document.getElementById('quickName').value.trim() || 'Sir/Madam';
+      const rawPhone = document.getElementById('quickPhone').value.trim();
+      const niche = document.getElementById('quickNiche').value;
+
+      if (!rawPhone) {
+        alert('Please enter a WhatsApp number!');
+        return;
+      }
+
+      const phone = rawPhone.replace(/[^0-9]/g, '');
+      const isDubai = niche === 'dubai';
+      const demo = isDubai 
+        ? 'https://supernova-saran.web.app/clients/malibu-luxury'
+        : 'https://supernova-saran.web.app/clients/mathan-dental';
+
+      const pitch = isDubai
+        ? `Hi ${name}, loved your luxury listings! We engineered a 3D interactive Penthouse portal with real-time currency & VIP concierge: ${demo} — would love to tailor one for your brand. Best, Saran A (SuperNova Studio).`
+        : `Hi ${name}, impressed by your clinic! We built an interactive Swiss-aesthetic dental platform featuring a live Before & After Smile Slider & 3D anatomy: ${demo} — would love to deploy one for your clinic! Best, Saran A (SuperNova Studio).`;
+
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(pitch)}`, '_blank');
     }
 
     function copyToClipboard(text, msg) {

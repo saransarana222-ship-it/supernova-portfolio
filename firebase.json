@@ -26,6 +26,14 @@
         "destination": "/certificate.html"
       },
       {
+        "source": "/clients/sothebys-dubai",
+        "destination": "/clients/sothebys-dubai/index.html"
+      },
+      {
+        "source": "/clients/sothebys-dubai/**",
+        "destination": "/clients/sothebys-dubai/index.html"
+      },
+      {
         "source": "/clients/mathan-dental",
         "destination": "/clients/mathan-dental/index.html"
       },
